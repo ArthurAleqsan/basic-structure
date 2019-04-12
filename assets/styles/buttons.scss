@@ -1,0 +1,79 @@
+.action-button-container {
+    .btn {
+        min-width: 90px;
+        width: 100%;
+        img {
+            width: 14px;
+            height: 14px;
+            min-width: 14px;
+            min-height: 14px;
+            margin: 0 2px;
+            cursor: pointer;
+            object-fit: contain;
+        }
+        p {
+            margin: 0 2px;
+            cursor: pointer;
+        }
+    }
+    .remove-btn {
+        background: #fff;
+        color: #5887F9;
+        width: 100%;
+        img {
+            display: none;
+        }
+    }
+    .pending-btn {
+        img {
+            display: none;
+        }
+    }
+    .send-message-btn {
+        width: 100%;
+        img {
+            width: 15px;
+            height: 12px;
+        }
+    }
+    .hidden-btn {
+        visibility: hidden;
+    }
+
+}
+.userColumn-action-button-container {
+    justify-content: space-around;
+    div {
+        width: 45%;
+        button {
+            width: 100%;
+            i {
+                left: 20%;
+            }
+        }
+        .send-message-btn img {
+            width: 16px;
+        }
+    }
+}
+.search-action-button-container {
+    justify-content: flex-end;
+    margin-right: 15px;
+    div {
+        width: 40%;
+        margin: 0 10px;
+        button {
+            width: 100%;
+        }
+        .remove-btn {
+            background: #5887F9;
+            color: #fafafa;
+        }
+    }
+}
+.suggested .action-button-container {
+    justify-content: space-around;
+    div {
+        width: 45%;
+    }
+}

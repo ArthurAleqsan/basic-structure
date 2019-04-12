@@ -1,0 +1,60 @@
+.signIn-main-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 90%;
+    padding-bottom: 5rem;
+    max-width: 1720px;
+    margin-top: 102px;
+    .column {
+        flex: 0.25 0 0;
+        .user-image-container{
+            position: relative;
+            // z-index: -1;
+            margin-top: 10px;
+            .cover-pic {
+                margin: 0;
+                width: 100%;
+                height: 140px;
+                border: none;
+                p{
+                    width: 50%;
+                    text-align: start;
+                    margin: 0 auto;
+                    font-size: 16px;
+                    font-family: ubuntu-bold;
+                    text-rendering: optimizelegibility;
+                    text-shadow: 0 0 3px rgba(0, 0, 0, .8);
+                }
+            }
+            .profile-pic {
+                width: 95px;
+                height: 95px;
+                border-radius: 2px;
+                position: absolute;
+                top: 45%;
+                // z-index: 0;
+                
+            }
+        }
+        .edit-Subcategory {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            div{
+                width: 45%;
+                color: #4c5264;
+                font-size: 12px;
+                padding: 0 0 5px;
+            }
+            div.subCategory {
+                display: flex;
+                justify-content: flex-start;
+                div {
+                    margin-left: 5px;
+                }
+            }
+        }
+    
+    }
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.571" height="24" viewBox="0 0 24.571 24">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5574f7"/>
+      <stop offset="1" stop-color="#60c3ff"/>
+    </linearGradient>
+  </defs>
+  <g id="notification" transform="translate(-207.747 -302.16)">
+    <path id="Path_1205" data-name="Path 1205" d="M227.9,326.885h0v-5.517a7.085,7.085,0,0,0-7.085-7.085H219.3a7.139,7.139,0,0,0-7.139,7.139v5.463h0a7.083,7.083,0,0,1-3.916,6.068v.476h23.571v-.476A7.083,7.083,0,0,1,227.9,326.885Z" transform="translate(0 -10.235)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill="url(#linear-gradient)"/>
+    <path id="Path_1206" data-name="Path 1206" d="M258.107,327.141a5.236,5.236,0,0,0-4.2,3.934" transform="translate(-39.204 -20.878)" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="Path_1207" data-name="Path 1207" d="M292.708,475.6a2.344,2.344,0,0,1-4.687,0" transform="translate(-70.246 -152.288)" stroke="#fff" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+    <path id="Path_1208" data-name="Path 1208" d="M296.021,304.048a1.388,1.388,0,1,1,2.776,0" transform="translate(-77.29)" stroke="#fff" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

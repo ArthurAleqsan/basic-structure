@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="65.369" height="50.458" viewBox="0 0 65.369 50.458">
+  <g id="add-new-photo" transform="translate(1 1)">
+    <ellipse id="ellipse" cx="13.047" cy="13.047" rx="13.047" ry="13.047" stroke-width="2" transform="translate(18.638 14.91)" stroke="#60c3ff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+    <ellipse id="ellipse-2" data-name="ellipse" cx="1.864" cy="1.864" rx="1.864" ry="1.864" transform="translate(52.186 14.91)" fill="none" stroke="#60c3ff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="path" d="M59.769,7.955h-12.3L45.977,3.109A3.58,3.58,0,0,0,42.622.5H21.747a3.58,3.58,0,0,0-3.355,2.609L16.529,7.955H4.6a4.137,4.137,0,0,0-4.1,4.1v32.8a4.137,4.137,0,0,0,4.1,4.1H59.769a4.137,4.137,0,0,0,4.1-4.1v-32.8A4.137,4.137,0,0,0,59.769,7.955Z" transform="translate(-0.5 -0.5)" fill="none" stroke="#60c3ff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

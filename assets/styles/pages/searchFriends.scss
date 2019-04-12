@@ -1,0 +1,78 @@
+.search-friends-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex: unset;
+    .search-friends-contnent{
+        flex: 0.6 0 0;
+        margin: 0 auto;
+        .search-friends-container-header {
+            .selectBox {
+                width: 100%;
+                border-radius: 5px;
+                background: #FAFAFA;
+                margin: 10px 0 20px 0;
+                border: 1px solid #E6E6E6;
+            }
+            .changeCategory {
+                margin: 0 0 20px;
+            }
+        }
+        .search-friends-container-body {
+            background-color: #FAFAFA;
+            padding: 5px 5px 0 5px;
+            border-radius: 5px;
+            border: 1px solid #E6E6E6;
+            color : #4C5264;
+            .user-container {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #E6E6E6;
+                .user-container-left-colomn {
+                    display: flex;
+                    align-items: center;
+                    flex: 0.4 0 0;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+                }
+                .user-img {
+                    width: 50px;
+                    height: 50px;
+                    min-width: 50px;
+                    min-height: 50px;
+                }
+                .user-container-right-colomn {
+                    display: flex;
+                    align-items: center;
+                    flex: 0.6 0 0;
+                    .action-button-container {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .right-column {
+        flex: 0.33 0 0;
+    }
+}
+.form-selectbox {
+    .ant-select-selection {
+        border-radius: 5px;
+        background: #fafafa;
+        margin: 10px 0 20px;
+        border: 1px solid #e6e6e6;
+        display: flex;
+        justify-content: space-between;
+        .ant-select-selection__rendered {
+            padding: 5px;
+        }
+        .ant-select-arrow {
+            padding: 5px;
+        }
+    }
+    
+}

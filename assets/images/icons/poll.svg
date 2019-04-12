@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="13" height="14" viewBox="0 0 13 14">
+  <g id="poll" transform="translate(-601 -257)">
+    <g id="Rectangle_784" data-name="Rectangle 784" transform="translate(601 260)" fill="none" stroke="#5887f9" stroke-width="1">
+      <rect width="3" height="11" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="2" height="10" rx="0.5" fill="none"/>
+    </g>
+    <g id="Rectangle_785" data-name="Rectangle 785" transform="translate(606 257)" fill="none" stroke="#5887f9" stroke-width="1">
+      <rect width="3" height="14" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="2" height="13" rx="0.5" fill="none"/>
+    </g>
+    <g id="Rectangle_786" data-name="Rectangle 786" transform="translate(611 262)" fill="none" stroke="#5887f9" stroke-width="1">
+      <rect width="3" height="9" rx="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="2" height="8" rx="0.5" fill="none"/>
+    </g>
+  </g>
+</svg>

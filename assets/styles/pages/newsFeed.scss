@@ -1,0 +1,17 @@
+.newsFeed-container {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    // margin: 0 auto 5%;
+    .column {
+        width: 33%;
+        flex: unset;
+    }
+    .center-column {
+        max-width: 770px;
+        width: 60%;
+        margin: 0 auto;
+        flex: unset;
+    }
+}
+

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.095" height="13.98" viewBox="0 0 14.095 13.98">
+  <g id="add-friend" transform="translate(0 0)">
+    <path id="path" d="M3.384,13.6v1.731L.5,16.658" transform="translate(0 -5.543)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="path-2" data-name="path" d="M13.4,17.5" transform="translate(-5.458 -7.193)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="path-3" data-name="path" d="M13.1,17.4" transform="translate(-5.331 -7.15)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="path-4" data-name="path" d="M11.3,13.6v1.731l1.038.462" transform="translate(-4.57 -5.543)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <path id="path-5" data-name="path" d="M7.238,8.346A3,3,0,0,0,9.257,5.519V2.865A2.339,2.339,0,0,0,6.892.5H5.565A2.339,2.339,0,0,0,3.2,2.865V5.519A3,3,0,0,0,5.219,8.346" transform="translate(-1.142)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    <circle id="ellipse" cx="2.884" cy="2.884" r="2.884" stroke-width="1" transform="translate(7.827 7.711)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+    <line id="line" y2="2.308" stroke-width="1" transform="translate(10.711 9.442)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+    <line id="line-2" data-name="line" x1="2.308" transform="translate(9.557 10.596)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,15 @@
+.isSignIn-footer {
+    background: #5887F9;
+    padding: 1%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    .container{
+        color:#fff;
+        font-size: 14px;
+    }
+}

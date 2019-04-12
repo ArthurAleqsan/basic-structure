@@ -1,0 +1,27 @@
+.right-column {
+    // display: flex;
+    .right-column-header {
+        color: #4C5264;
+        font-size: 14px;
+        padding: 20px 0 0;
+        margin-left: 10px;
+    }
+    .right-column-body {
+        display: flex;
+        flex-wrap: wrap;
+        .frends-image-box {
+            width: 185px;
+            height: 185px;
+            div {
+                height: 15%;
+                :first-child {
+                    font-size: 13px;
+                }
+                :last-child {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.772" height="13.98" viewBox="0 0 12.772 13.98">
+  <g id="request_sent" data-name="request sent" transform="translate(0.5 0.5)">
+    <g id="add-mentor-icon">
+      <path id="path" d="M3.093,13.6v1.731L.5,16.658" transform="translate(-0.5 -6.043)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="path-2" data-name="path" d="M13.4,17.5" transform="translate(-6.71 -7.693)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="path-3" data-name="path" d="M13.1,17.4" transform="translate(-6.566 -7.65)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="path-4" data-name="path" d="M11.3,13.6v1.731l.933.462" transform="translate(-5.699 -6.043)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="path-5" data-name="path" d="M6.83,8.346A3,3,0,0,0,8.645,5.519V2.865A2.231,2.231,0,0,0,6.519.5H5.326A2.231,2.231,0,0,0,3.2,2.865V5.519A3,3,0,0,0,5.015,8.346" transform="translate(-1.8 -0.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+      <ellipse id="ellipse" cx="2.593" cy="2.884" rx="2.593" ry="2.884" stroke-width="1" transform="translate(6.586 7.211)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+      <line id="line" x1="2" y2="1" stroke-width="1" transform="translate(8.254 10.263)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
+      <line id="line-2" data-name="line" x1="1.963" y1="0.833" transform="translate(8.254 9.263)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

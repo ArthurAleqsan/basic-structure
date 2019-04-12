@@ -1,0 +1,110 @@
+.main-container {
+    .isSignin-user-main-container-content {
+        flex: 0 0 100%;
+        display: block;
+            .main-container-header {
+                padding: 1px;
+                position: fixed;
+                z-index: 5;
+                // background-color: #fff;
+                .container {
+                    width : 90%;
+                    max-width: 1720px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .logo-column {
+                        flex: 0.25;
+                        display: flex;
+                        a {
+                            max-width: 100px;
+                            flex: 1;
+                            .logo {
+                                max-width: 100px;
+                                max-height: 100px;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                        }
+
+                    }
+                    .header-right-column{
+                        display: flex;
+                        justify-content: center;
+                        flex: 0.75;
+                        .search-container {
+                            width: 60%;
+                            position: relative;
+                            .form-input {
+                                width: 100%;
+                                font-size: 14px;
+                                color :#4C5264;
+                                box-shadow: 0;
+                                transition: box-shadow ease-in-out .3s;
+                            }
+                            .form-input:focus {
+                                box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+                            }
+                            i {
+                                position: absolute;
+                                right: 1%;
+                                top: 15%;
+                                background-repeat: no-repeat;
+                                height: 20px;
+                                width: 20px;
+                                max-width: 20px;
+                                background-size: contain;
+                                background-position: center;
+                                cursor: pointer;
+                            }
+                        }
+                        .nots-container {
+                            width: 33%;
+                            .notification-icons-container {
+                                display: flex;
+                                height: 2rem;
+                                justify-content: flex-end;
+                                align-items: center;
+                                .notification-icon-container {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                }
+                                .icon {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    cursor: pointer;
+                                    margin-left: 15px;
+                                    position: relative;
+                                    i{
+                                        width: 22px;
+                                        height: 22px;
+                                        background-repeat: no-repeat;
+                                        background-position: center;
+                                    }
+                                    .empty-elipse {
+                                        background-size: contain;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        width: 10px;
+                                        height: 10px;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                            }
+                        }
+
+    
+                    }
+                    
+                }
+            }
+    }
+}
