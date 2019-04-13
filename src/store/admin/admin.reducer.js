@@ -1,7 +1,7 @@
 import * as types from './../types';
 
 const initialState = {
-    announcements : null,
+    announcements: null,
 };
 
 export default function adminReducer(state = initialState, action) {
@@ -9,8 +9,13 @@ export default function adminReducer(state = initialState, action) {
         case types.GET_LIST_OF_ANNOUNCEMENTS:
             return {
                 ...state,
-                announcements : action.announcements,
+                announcements: action.announcements,
             };
+        case types.SET_ANNOUNCEMENTS:
+            return {
+                ...state,
+                announcements: action.announcements,
+            }
         default:
             return state;
     }

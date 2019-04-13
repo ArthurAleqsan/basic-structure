@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import SelectCategory from './selectCategory';
 import { GetUserCategories } from './../../../store/signUp/signUp.actions';
-import Announcements from './announcements';
+import Announcements from '../announcements/announcements';
 import { getAnnouncments } from './../../../store/admin/admin.actions';
 
 const Answers = props => {

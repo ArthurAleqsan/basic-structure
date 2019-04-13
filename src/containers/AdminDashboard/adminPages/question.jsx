@@ -7,7 +7,7 @@ import { GetUserCategories } from './../../../store/signUp/signUp.actions';
 import { getSubCategoriesForUserSettings } from './../../../store/user/user.actions';
 
 const Questions = props => {
-    const { categories, getUserCategories, getSubCategories } = props;
+    const { categories, getUserCategories,  } = props;
     const [selectedCategory, setCategory] = useState(null);
     return (
         <div>
@@ -15,7 +15,7 @@ const Questions = props => {
                 <SelectCategory title='Category' isRequired={true} setCategory={setCategory} categories={categories} getUserCategories={getUserCategories} />
             )}
             {selectedCategory && (
-                <CreateQuestion categories={categories} selectedCategory={selectedCategory} getSubCategories={getSubCategories} />
+                <CreateQuestion  selectedCategory={selectedCategory} />
             )}
         </div>
     )
@@ -35,7 +35,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getUserCategories: () => dispatch(GetUserCategories()),
-        getSubCategories: (categoryId) => dispatch(getSubCategoriesForUserSettings(categoryId)),
+       
 
     }
 };

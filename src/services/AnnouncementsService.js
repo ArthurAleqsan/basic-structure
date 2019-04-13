@@ -22,6 +22,19 @@ class AnnouncementsService extends Request {
         };
         return this.send({ path:`/?${Request.makeQuery(newQuery)}`, options }).then( ({ json, }) => json );
     }
+    removeAnnouncement(announcementId) {
+        const options = {
+            method: 'DELETE',
+        };
+        return this.send({ path:`/${announcementId}`, options }).then( ({ status, }) => (status) );
+    }
+    editAnnouncement(data, announcementId) {
+        const options = {
+            method: 'PATCH',
+            body: JSON.stringify(data), 
+        };
+        return this.send({ path:`/${announcementId}`, options }).then( ({ json, }) => json );
+    }
 }
 
 export default new AnnouncementsService();

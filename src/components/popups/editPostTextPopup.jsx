@@ -2,13 +2,24 @@ import React, { useState, } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next/hooks';
 import { Button } from '../componentsLib/simpleUiComponents';
+import DatePicker from 'react-datepicker';
+
+import "react-datepicker/dist/react-datepicker.css";
+import './../../../assets/styles/datepicker.scss';
 
 const EditPostTextPopup = props => {
-    const { text, editPost, postId, close, isCommentHeader } = props;
+    const { editPost, close, announcement } = props;
+    const { text, activeDateFrom, activeDateTo } = announcement;
     const [t] = useTranslation();
-    const [postText, setnewPostText] = useState(text);
+    const [oldannouncement, setNewAnnouncement] = useState({
+        text,
+        activeDateFrom,
+        activeDateTo,
+
+    });
+    console.log(announcement)
     const newPost = () => {
-        isCommentHeader ? editPost(postId, commentId, postText, true) : editPost(postId, { text: postText });
+        // isCommentHeader ? editPost(postId, commentId, postText, true) : editPost(postId, { text: postText });
         close();
     };
     return (
@@ -20,8 +31,8 @@ const EditPostTextPopup = props => {
                             <textarea
                                 className='create-new-post-input'
                                 name='newPostText'
-                                value={postText}
-                                onChange={(e) => setnewPostText(e.target.value)}
+                                value={oldannouncement.text}
+                                onChange={(e) => setNewAnnouncement({...oldannouncement, text: e.target.value})}
                             />
                         </div>
                     </div>
@@ -33,6 +44,35 @@ const EditPostTextPopup = props => {
                                 <span>{t('Emojies')}</span>
                             </div>
                         </div>
+                        <div className='select-category-selectBox select-category-selectBox-datepicker'>
+                <div className="form-group datePicker-container">
+                    <label>{t(`Announcement active From `)} <span> *</span></label>
+
+                    <DatePicker
+                        name='activeFrom'
+                        className='form-input'
+                        placeholderText='DD/MM/YY'
+                        selected={announcement.activeDateFrom && new Date(announcement.activeDateFrom)}
+                        onChange={(date) => setNewAnnouncement({ ...announcement, activeDateFrom: new Date(date).toISOString() })}
+                        dateFormat='dd/MM/yy'
+                    />
+
+                </div>
+                <div className="form-group datePicker-container">
+                    <label>{t(`Announcement active To `)} <span> *</span></label>
+
+                    <DatePicker
+                        name='activeTo'
+                        className='form-input'
+                        placeholderText='DD/MM/YY'
+                        selected={announcement.activeDateTo && new Date(announcement.activeDateTo)}
+                        onChange={(date) => setNewAnnouncement({ ...announcement, activeDateTo: new Date(date).toISOString() })}
+                        dateFormat='dd/MM/yy'
+                    />
+
+                </div>
+            </div>
+
 
                         <Button type='button' className='create-post-btn' onClick={() => newPost()}> Save </Button>
                     </div>
@@ -42,8 +82,7 @@ const EditPostTextPopup = props => {
     )
 }
 EditPostTextPopup.propTypes = {
-    text: PropTypes.string.isRequired,
-    postId: PropTypes.string.isRequired,
+    announcement: PropTypes.object.isRequired,
     editPost: PropTypes.func.isRequired,
     close: PropTypes.func.isRequired,
 };

@@ -10,18 +10,39 @@ import './../../../../assets/styles/datepicker.scss'
 // import DropZone from './../../../components/fileUpload/DropZone'; 
 import { Button } from './../../../components/componentsLib/simpleUiComponents';
 import { createSingleAnnouncement } from './../../../store/admin/admin.actions';
+import { getSubCategoriesForUserSettings } from '../../../store/user/user.actions';
 
 const CreateQuestion = props => {
-    const { categories, selectedCategory, getSubCategories, subCategories, createSingleAnnouncement } = props;
+    const { categories, selectedCategory, getSubCategories, subCategories, createSingleAnnouncement, isEditAnnouncement, editableAnnouncement, editPost, close } = props;
     const [t] = useTranslation();
-    const [selectedSubCategories, setselectedSubCategories] = useState([]);
+    // const propsSubCategories = [];
+
     const [announcement, setNewAnnouncement] = useState({
-        text: '',
-        activeDateFrom: '',
-        activeDateTo: '',
-        categoryId: '',
+        text: isEditAnnouncement ? editableAnnouncement.text : '',
+        activeDateFrom: isEditAnnouncement ? editableAnnouncement.activeDateFrom : '',
+        activeDateTo: isEditAnnouncement ? editableAnnouncement.activeDateTo : '',
+        categoryId: isEditAnnouncement ? editableAnnouncement.categoryId : '',
         subCategoryIds: [],
     });
+    const [selectedSubCategories, setselectedSubCategories] = useState([]);
+
+    // if(isEditAnnouncement) {
+    //     subCategories.map(subCategory => {
+    //         const selectedSubCategory = editableAnnouncement.subCategoryIds.map(subCategoryId => {
+    //             // console.log(subCategoryId)
+    //             // console.log(subCategory.id)
+    //             if(subCategory.id === subCategoryId) {
+    //                 let i = 0
+    //                 console.log(i++)
+    //                 // setselectedSubCategories([...propsSubCategories, subCategory])
+    //             }
+    //         });
+    //         // console.log(selectedSubCategory)
+    //         // setselectedSubCategories([...propsSubCategories, subCategories);
+    //     });
+
+    // }
+    // console.log(selectedSubCategories)
 
     useEffect(() => {
         getSubCategories(selectedCategory);
@@ -55,7 +76,8 @@ const CreateQuestion = props => {
         event.preventDefault();
         const subCategoryIds = selectedSubCategories.map(selectedSubCategory => announcement.subCategoryIds.push(selectedSubCategory.id));
         setNewAnnouncement({ ...announcement, subCategoryIds, });
-        createSingleAnnouncement(announcement);
+        isEditAnnouncement ? editPost(announcement, editableAnnouncement.announcementId, announcement.categoryId) : createSingleAnnouncement(announcement);
+        isEditAnnouncement && close();
     }
 
     return (
@@ -154,12 +176,14 @@ CreateQuestion.propTypes = {
 const mapStateToProps = state => {
     return {
         subCategories: state.user.subCategories,
-
+        categories : state.signUp.categories,
     }
 };
+
 const mapDispatchToProps = dispatch => {
     return {
         createSingleAnnouncement: (data) => createSingleAnnouncement(data),
+        getSubCategories: (categoryId) => dispatch(getSubCategoriesForUserSettings(categoryId)),
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CreateQuestion);

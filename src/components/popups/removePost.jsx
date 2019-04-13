@@ -4,11 +4,11 @@ import { useTranslation } from 'react-i18next/hooks';
 import { Button } from '../componentsLib/simpleUiComponents';
 
 const RemovePost = props => {
-    const { close, postId, removePost, fromnewsfeed, currentUserId, isCommentHeader, commentedPostId , isPostImage} = props;
+    const { close, removePost, announcement } = props;
+    const {categoryId, announcementId} = announcement;
     const [t] = useTranslation();
     const handleSubmit = () => {
-        const fromPage = fromnewsfeed ? 'newsFeed' : 'userPosts'
-        isCommentHeader ? removePost(commentedPostId, postId, 'mediaPopup', isPostImage) : removePost(postId, fromPage, currentUserId);
+        removePost(announcementId, categoryId);
         close();
     };
     return (
@@ -33,11 +33,6 @@ const RemovePost = props => {
 RemovePost.propTypes = {
     close: PropTypes.func.isRequired,
     removePost: PropTypes.func.isRequired,
-    postId: PropTypes.string.isRequired,
-    commentedPostId: PropTypes.string,
-    isPostImage : PropTypes.bool,
-    isCommentHeader : PropTypes.bool,
-    fromnewsfeed: PropTypes.any,
-    currentUserId: PropTypes.any,
+    announcement: PropTypes.object.isRequired,
 };
 export default RemovePost;
