@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import SelectCategory from './selectCategory';
-import { GetUserCategories } from '../../../store/signUp/signUp.actions';
+import { GetUserCategories } from './../../../store/signUp/signUp.actions';
+import Announcements from './announcements';
+import { getAnnouncments } from './../../../store/admin/admin.actions';
 
 const Answers = props => {
-    const {getUserCategories, categories} = props
+    const {getUserCategories, categories, getAnnouncments} = props
     const [selectedCategory, setCategory] = useState(null);
     return (
         <div>
@@ -14,8 +16,7 @@ const Answers = props => {
                 <SelectCategory title='Category'  setCategory={setCategory} categories={categories} getUserCategories={getUserCategories} />
             )}
             {selectedCategory && (
-                <div>dfb</div>
-                // <CreateQuestion categories={categories} selectedCategory={selectedCategory} getSubCategories={getSubCategories} />
+                <Announcements  getAnnouncments = {getAnnouncments} selectedCategory = {selectedCategory}/>
             )}
         </div>
     )
@@ -23,6 +24,7 @@ const Answers = props => {
 Answers.propTypes = {
     categories: PropTypes.array.isRequired,
     getUserCategories: PropTypes.func.isRequired,
+    getAnnouncments: PropTypes.func.isRequired,
 };
 const mapStateToProps = state => {
     const { categories } = state.signUp;
@@ -34,6 +36,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         getUserCategories: () => dispatch(GetUserCategories()),
+        getAnnouncments: (categoryId,) => dispatch(getAnnouncments(categoryId)),
         // getSubCategories: (categoryId) => dispatch(getSubCategoriesForUserSettings(categoryId)),
 
     }

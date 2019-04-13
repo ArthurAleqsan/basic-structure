@@ -102,3 +102,7 @@ export const SET_NOTIFICATIONS_COUNT = 'SET_NOTIFICATIONS_COUNT';
 export const SET_NOTIFICATIONS = 'SET_NOTIFICATIONS';
 
 //end notifications
+
+// Admin 
+export const GET_LIST_OF_ANNOUNCEMENTS = 'GET_LIST_OF_ANNOUNCEMENTS';
+ // end of Admin

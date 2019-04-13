@@ -12,13 +12,16 @@ class AnnouncementsService extends Request {
         };
         return this.send({ path:'/', options }).then( ({ json, }) => json );
     }
-    getAnnouncement() {
+    getListOfAnnouncements(query) {
+        const newQuery = {};
+        Object.keys(query).forEach(k => {
+            if(query[k]) newQuery[k] = query[k];
+        })
         const options = {
             method: 'GET',
         };
-        return this.send({ path:'/active', options }).then( ({ json, }) => json );
+        return this.send({ path:`/?${Request.makeQuery(newQuery)}`, options }).then( ({ json, }) => json );
     }
-
 }
 
 export default new AnnouncementsService();

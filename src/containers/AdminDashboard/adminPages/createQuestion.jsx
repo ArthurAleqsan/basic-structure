@@ -54,11 +54,8 @@ const CreateQuestion = props => {
     const createAnnouncement = () => {
         event.preventDefault();
         const subCategoryIds = selectedSubCategories.map(selectedSubCategory => announcement.subCategoryIds.push(selectedSubCategory.id));
-        // console.log(newSubCategoryIds)
         setNewAnnouncement({ ...announcement, subCategoryIds, });
-        console.log(announcement);
         createSingleAnnouncement(announcement);
-
     }
 
     return (

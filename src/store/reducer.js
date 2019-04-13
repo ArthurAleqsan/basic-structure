@@ -9,6 +9,7 @@ import media from './media/media.reducer';
 import posts from './posts/posts.reducer';
 import comments from './comments/comments.reducer';
 import notifications from './notifications/notifications.reducer';
+import admin from './admin/admin.reducer';
 
 export default combineReducers({
     user,
@@ -20,4 +21,5 @@ export default combineReducers({
     posts,
     comments,
     notifications,
+    admin,
 });
