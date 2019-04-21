@@ -11,23 +11,28 @@ const cssnano = require('cssnano');
 const path = require('path');
 const modules = require('./webpack.config.modules');
 
-const publicPath = '/';
+const publicPath = '/public';
 const srcPath = path.join(__dirname, 'src');
 const defaultSkinName = 'default';
 const skin = process.env.skin || defaultSkinName;
-const env = process.env.NODE_ENV || 'developmant';
+const env = 'production';
 const outputPath = path.resolve(__dirname, env === 'production' ? 'public' : 'publicDev');
 
+
+
 const API_USER_URL = 'http://localhost:8080/api';
-const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
-const API_UPLOAD_URL = 'http://teamath-media-api.us-east-1.elasticbeanstalk.com/api/v1/media';
-const API_POSTS_URL = 'http://teamath-posts-api.us-east-1.elasticbeanstalk.com/api/v1';
-const API_MEDIA_URL = 'http://teamath-posts-api.us-east-1.elasticbeanstalk.com/api/v1';
-const API_ANNOUNCEMENTS_URL = 'http://teamath-posts-api.us-east-1.elasticbeanstalk.com/api/v1';
-//const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
+const API_AUTH_URL = 'http://localhost:8080/oauth';
+const API_UPLOAD_URL = 'http://localhost:8080/upload';
+const API_POSTS_URL = 'http://localhost:8080/posts';
+const API_MEDIA_URL = 'http://localhost:8080/media';
+const API_ANNOUNCEMENTS_URL = 'http://localhost:8080/announcements';
+
 const PLACES = 'http://localhost:8080/places';
 
+//const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
+
 const config = {
+
     entry: {
         app: path.join(srcPath, 'index.jsx'),
     },
@@ -78,7 +83,7 @@ const config = {
         new HtmlWebpackPlugin({
             template: './index.html',
             googleAnalitic: env === 'production' ? `<script></script>` : '',
-            title: 'test'
+            title: 'GodsSides'
         }),
         new MiniCssExtractPlugin({
             filename: "[name]-[hash].css",
@@ -116,7 +121,7 @@ const config = {
         }),
     ],
     devServer: {
-        port: 4000,
+        port: 3000,
         host: '0.0.0.0',
         disableHostCheck: true,
         historyApiFallback: true,
@@ -134,15 +139,15 @@ const config = {
             },
             '/posts' : {
                 target : API_POSTS_URL,
-                // pathRewrite: {'^/posts' : ''}
+                pathRewrite: {'^/posts' : ''}
             },
             '/media' : {
                 target : API_MEDIA_URL,
-                //pathRewrite: {'^/posts' : ''}
+                pathRewrite: {'^/media' : ''}
             },
             '/announcements': {
                 target : API_ANNOUNCEMENTS_URL,
-                //pathRewrite: {'^/posts' : ''}
+                pathRewrite: {'^/announcements' : ''}
             },
             '/places' : {
                 target: PLACES,
