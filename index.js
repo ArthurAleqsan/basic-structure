@@ -1,11 +1,13 @@
 const express = require('express');
 const proxy = require('http-proxy-middleware');
+const path = require('path');
 
 const app = express();
-const API_USER_URL = 'http://users-api-production.us-east-1.elasticbeanstalk.com/api/v1';
-const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
-const API_MEDIA_URL = 'http://teamath-media-api.us-east-1.elasticbeanstalk.com/api/v1/media';
-const API_POSTS_URL = 'http://teamath-posts-api.us-east-1.elasticbeanstalk.com/api/v1';
+const PORT = process.env.PORT || 3000;
+const API_USER_URL = process.env.API_USER_URL || 'http://users-api-production.us-east-1.elasticbeanstalk.com/api/v1';
+const API_AUTH_URL = process.env.API_AUTH_URL || 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
+const API_MEDIA_URL = process.env.API_MEDIA_URL || 'http://teamath-media-api.us-east-1.elasticbeanstalk.com/api/v1/media';
+const API_POSTS_URL = process.env.API_POSTS_URL || 'http://teamath-posts-api.us-east-1.elasticbeanstalk.com/api/v1';
 const PLACES = 'https://maps.googleapis.com/maps/api';
 
 const page = require('./page/');
@@ -40,14 +42,14 @@ app.use('/assets', express.static('assets'));
 
 
 app.use(async (req, res, next) => {
-    res.end(page());
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 //app.use(express.static('public'));
 
 
-app.listen(8080, () => {
-    console.log(`Listening on 8080`);
+app.listen(PORT, () => {
+    console.log(`Listening on ${PORT}`);
 });
 
 
