@@ -2,6 +2,7 @@ const express = require('express');
 const proxy = require('http-proxy-middleware');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 const API_USER_URL = process.env.API_USER_URL || 'http://users-api-production.us-east-1.elasticbeanstalk.com/api/v1';
 const API_AUTH_URL = process.env.API_AUTH_URL || 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
 const API_MEDIA_URL = process.env.API_MEDIA_URL || 'http://teamath-media-api.us-east-1.elasticbeanstalk.com/api/v1/media';
@@ -46,8 +47,8 @@ app.use(async (req, res, next) => {
 //app.use(express.static('public'));
 
 
-app.listen(8080, () => {
-    console.log(`Listening on 8080`);
+app.listen(PORT, () => {
+    console.log(`Listening on ${PORT}`);
 });
 
 
