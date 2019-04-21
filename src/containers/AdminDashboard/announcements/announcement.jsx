@@ -5,7 +5,7 @@ import FormatedTime from '../../../components/formatedTime/FormatedTime';
 import EditPost from '../../../components/popups/editPost';
 
 const Announcement = props => {
-    const { announcement, actions } = props;
+    const { announcement, actions, announcements } = props;
     const [t] = useTranslation();
     const [editPostPopup, setPopup] = useState(null);
     return (
@@ -25,6 +25,7 @@ const Announcement = props => {
                                     close={() => setPopup(null)}
                                     actions={actions}
                                     post={announcement}
+                                    announcements = {announcements}
                                 />)
                                 }
                             />

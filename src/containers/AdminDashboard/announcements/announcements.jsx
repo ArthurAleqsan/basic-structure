@@ -20,7 +20,7 @@ const Announcements = props => {
     return (
         <div className='announcements-page-container'>
             {announcements.length > 0 && announcements.map(announcement => (
-                <Announcement key = {announcement.announcementId} announcement = {announcement} actions = {actions} />
+                <Announcement key = {announcement.announcementId} announcement = {announcement} actions = {actions} announcements = {announcements} />
             ))}
         </div>
     )

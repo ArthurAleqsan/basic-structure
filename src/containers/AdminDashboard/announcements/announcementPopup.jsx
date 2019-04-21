@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next/hooks';
 import CreateQuestion from './../adminPages/createQuestion';
 
 const AnnouncementPopup = props => {
-    const { close, announcement, editPost } = props;
-    const [t] = useTranslation();
+    const { close, announcement, editPost, announcements } = props;
+
+    // console.log(announcement,);
+    // console.log('ts',announcements,);
 
     return (
         <div className="popup main-container-popup" id='popup' onClick={(e) => { e.target.id === "popup" ? close() : null }}>

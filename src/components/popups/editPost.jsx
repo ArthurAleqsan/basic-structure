@@ -5,7 +5,7 @@ import RemovePost from './removePost';
 import AnnouncementPopup from '../../containers/AdminDashboard/announcements/announcementPopup';
 
 const EditPost = props => {
-    const { close, actions, post, } = props;
+    const { close, actions, post, announcements } = props;
     const { removePost, editPost } = actions;
 
     const [t] = useTranslation();
@@ -29,6 +29,7 @@ const EditPost = props => {
                                     selectedCategory={post.categoryId}
                                     announcement={post}
                                     editPost={editPost}
+                                    announcements = {announcements}
                                 />
                             })
                         }
