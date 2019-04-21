@@ -41,7 +41,7 @@ app.use('/assets', express.static('assets'));
 
 
 app.use(async (req, res, next) => {
-    res.end(page());
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 //app.use(express.static('public'));
