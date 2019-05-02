@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { Input, Button } from '../componentsLib/simpleUiComponents';
 import { useTranslation } from 'react-i18next/hooks';
 
 import { login } from './../../store/user/user.actions';
+import { Input, Button } from './../componentsLib/simpleUiComponents';
+
 
 function HeaderPublic(props) {
     const [t] = useTranslation();
@@ -47,10 +48,6 @@ function HeaderPublic(props) {
                             onChange={(name, value) => setValues({ ...form, [name]: value })}
                             className='form-input'
                         />
-
-                        <Link to='/welcome/forgot-password'>
-                            <small>{t('Forgot Password')}</small>
-                        </Link>
                     </div>
                     <div className = 'header-submit-container'>
                         <Button type="submit" className='form-input'>{t('Log In')}</Button>

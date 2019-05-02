@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HeaderPrivate from '../../components/headers/private';
+import HeaderPrivate from './../../components/headers/private';
 import Questions from './../AdminDashboard/adminPages/question';
 import Answers from './../AdminDashboard/adminPages/answers';
 

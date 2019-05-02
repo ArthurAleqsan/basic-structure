@@ -80,28 +80,8 @@ export const SET_POSTS_AND_NEWSFEED = 'SET_POSTS_AND_NEWSFEED';
 // end posts
 
 
-// media
-export const GET_MEDIA_SUCCESS = 'GET_MEDIA_SUCCESS';
-export const SET_MEDIA = 'SET_MEDIA';
-
-// end media
 
 
-//comment
-export const ADD_COMMENT_SUCCESS = 'ADD_COMMENT_SUCCESS';
-export const GET_COMMENTS_SUCCESS = 'GET_COMMENTS_SUCCESS';
-export const SET_COMMENTS = 'SET_COMMENTS';
-export const SUCCESS_EDIT_COMMENT = 'SUCCESS_EDIT_COMMENT';
-export const SET_COMMENTS_COUNT = 'SET_COMMENTS_COUNT';
-
-//end comments
-
-
-//notifications
-export const SET_NOTIFICATIONS_COUNT = 'SET_NOTIFICATIONS_COUNT';
-export const SET_NOTIFICATIONS = 'SET_NOTIFICATIONS';
-
-//end notifications
 
 // Admin 
 export const GET_LIST_OF_ANNOUNCEMENTS = 'GET_LIST_OF_ANNOUNCEMENTS';

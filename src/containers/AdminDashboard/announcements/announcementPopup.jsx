@@ -17,7 +17,7 @@ const AnnouncementPopup = props => {
                     selectedCategory={announcement.categoryId}
                     editableAnnouncement = {announcement}
                     editPost = {editPost}
-                    close ={close}
+                    close ={close}  
                 />
             </div>
         </div>

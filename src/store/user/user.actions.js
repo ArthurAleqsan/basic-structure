@@ -2,10 +2,7 @@ import * as types from './../types';
 import UserService from './../../services/UserService';
 import AuthService from './../../services/AuthService';
 import CategoryService from './../../services/CategoryService';
-import MessagesService from './../../services/MessagesService';
-import NotificationsService from './../../services/NotificationsService';
-import { subscribeForMessages, setRooms } from './../messages/messages.actions';
-import { subscribeForNotifications } from './../notifications/notifications.actions';
+
 
 export function login(form) {
     return (dispatch) => {
@@ -19,7 +16,6 @@ export function login(form) {
     }
 }
 export function getUser() {
-    const LIMIT_OF_ROMMS = 6;
     return (dispatch) => {
         UserService.getUser().then(({ status, json: currentUser }) => {
             if (UserService.isOkStatus(status)) {
@@ -28,13 +24,7 @@ export function getUser() {
                //    dispatch(setRooms(rooms))
                //});
                 
-                NotificationsService.init().then( (notifCount) => {
-                    dispatch(subscribeForNotifications());
-                    dispatch({
-                        type: types.SET_NOTIFICATIONS_COUNT,
-                        notifCount,
-                    })
-                });
+
                 dispatch({
                     type: types.USER_GET_CURRENT_SUCCESS,
                     currentUser,
@@ -46,18 +36,7 @@ export function getUser() {
     }
 }
 
-export function getUserById(id) {
-    return (dispatch) => {
-        UserService.getUserById(id).then(({ status, user }) => {
-            if (UserService.isOkStatus(status)) {
-                dispatch({
-                    type: types.USER_GET_SUCCESS,
-                    user
-                })
-            }
-        })
-    }
-}
+
 
 export function logout() {
     return (dispatch) => {

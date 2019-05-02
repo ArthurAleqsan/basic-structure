@@ -20,14 +20,16 @@ const outputPath = path.resolve(__dirname, env === 'production' ? 'public' : 'pu
 
 
 
-const API_USER_URL = 'http://localhost:8080/api';
-const API_AUTH_URL = 'http://localhost:8080/oauth';
-const API_UPLOAD_URL = 'http://localhost:8080/upload';
-const API_POSTS_URL = 'http://localhost:8080/posts';
-const API_MEDIA_URL = 'http://localhost:8080/media';
-const API_ANNOUNCEMENTS_URL = 'http://localhost:8080/announcements';
+const API_USER_URL = 'http://localhost:4000/api';
+const API_AUTH_URL = 'http://localhost:4000/oauth';
+const API_UPLOAD_URL = 'http://localhost:4000/upload';
+const API_POSTS_URL = 'http://localhost:4000/posts';
+const API_MEDIA_URL = 'http://localhost:4000/media';
+const API_ANNOUNCEMENTS_URL = 'http://localhost:4000/announcements';
 
-const PLACES = 'http://localhost:8080/places';
+
+
+const PLACES = 'http://localhost:4000/places';
 
 //const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
 
