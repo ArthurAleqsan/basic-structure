@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 
-import { removeAnnouncement, editAnnouncement } from '../../../store/admin/admin.actions';
+import { removeAnnouncement, editAnnouncement } from './../../../store/admin/admin.actions';
 import Announcement from './announcement';
 
 
@@ -20,7 +20,7 @@ const Announcements = props => {
     return (
         <div className='announcements-page-container'>
             {announcements.length > 0 && announcements.map(announcement => (
-                <Announcement key = {announcement.announcementId} announcement = {announcement} actions = {actions} announcements = {announcements} />
+                <Announcement key = {announcement.announcementId} announcement = {announcement} actions = {actions} />
             ))}
         </div>
     )

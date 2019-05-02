@@ -37,7 +37,6 @@ const mapDispatchToProps = dispatch => {
     return {
         getUserCategories: () => dispatch(GetUserCategories()),
         getAnnouncments: (categoryId,) => dispatch(getAnnouncments(categoryId)),
-        // getSubCategories: (categoryId) => dispatch(getSubCategoriesForUserSettings(categoryId)),
 
     }
 };

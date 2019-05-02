@@ -1,5 +1,13 @@
-//q697217@nwytg.net marley
-//q710454@nwytg.net alba
-
-//6rqh1dqvk7rft7ib6eh0alv5mu2v4fv client
-//KJum46WoWcMynoU1CWlkhL secret
+export function updateInArray(array, findFn, updateFn) {
+    const index = array.findIndex(findFn);
+    const elem = array.find(findFn);
+    const newArray = [...array];
+    newArray.splice(index, 1, updateFn(elem));
+    return newArray;
+}
+export function removeFromArray(array, findFn) {
+    const index = array.findIndex(findFn);
+    const newArray = [...array];
+    newArray.splice(index, 1);
+    return newArray;
+}

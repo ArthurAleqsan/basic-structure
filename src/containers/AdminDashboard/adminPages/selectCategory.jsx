@@ -18,8 +18,7 @@ const SelectCategory = props => {
                 {isRequired && (<div className= 'dashboard-category  dashboard-category-title'>{t('Select category')}</div>)}
                 {categories.map(category => {
                     return (<div key={category.name} className='dashboard-category' style={{ backgroundColor: category.color }} onClick = {() => setCategory(category.id)} >
-                        <p>{t('Category ') + category.name}</p>
-                        {/* <p>500 {t('Users')}</p> */}
+                        <p>{category.name}</p>
                     </div>)
                 })}
             </div>

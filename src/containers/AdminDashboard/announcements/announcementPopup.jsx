@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import CreateQuestion from './../adminPages/createQuestion';
 
 const AnnouncementPopup = props => {
-    const { close, announcement, editPost, announcements } = props;
-
-    // console.log(announcement,);
-    // console.log('ts',announcements,);
+    const { close, closeEditPopup, announcement, editPost,} = props;
 
     return (
         <div className="popup main-container-popup" id='popup' onClick={(e) => { e.target.id === "popup" ? close() : null }}>
@@ -17,7 +14,8 @@ const AnnouncementPopup = props => {
                     selectedCategory={announcement.categoryId}
                     editableAnnouncement = {announcement}
                     editPost = {editPost}
-                    close ={close}  
+                    close ={close} 
+                    closeEditPopup = {closeEditPopup} 
                 />
             </div>
         </div>
@@ -25,6 +23,7 @@ const AnnouncementPopup = props => {
 }
 AnnouncementPopup.propTypes = {
     close: PropTypes.func.isRequired,
+    closeEditPopup: PropTypes.func.isRequired,
     editPost: PropTypes.func.isRequired,
     announcement: PropTypes.object.isRequired,
 };

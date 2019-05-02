@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import SelectCategory from './selectCategory';
 import CreateQuestion from './createQuestion';
 import { GetUserCategories } from './../../../store/signUp/signUp.actions';
-import { getSubCategoriesForUserSettings } from './../../../store/user/user.actions';
 
 const Questions = props => {
     const { categories, getUserCategories,  } = props;

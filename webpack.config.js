@@ -20,12 +20,12 @@ const outputPath = path.resolve(__dirname, env === 'production' ? 'public' : 'pu
 
 
 
-const API_USER_URL = 'http://localhost:4000/api';
-const API_AUTH_URL = 'http://localhost:4000/oauth';
-const API_UPLOAD_URL = 'http://localhost:4000/upload';
-const API_POSTS_URL = 'http://localhost:4000/posts';
-const API_MEDIA_URL = 'http://localhost:4000/media';
-const API_ANNOUNCEMENTS_URL = 'http://localhost:4000/announcements';
+const API_USER_URL = 'http://localhost:3000/api';
+const API_AUTH_URL = 'http://localhost:3000/oauth';
+const API_UPLOAD_URL = 'http://localhost:3000/upload';
+const API_POSTS_URL = 'http://localhost:3000/posts';
+const API_MEDIA_URL = 'http://localhost:3000/media';
+const API_ANNOUNCEMENTS_URL = 'http://localhost:3000/announcements';
 
 
 
