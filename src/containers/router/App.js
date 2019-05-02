@@ -5,12 +5,12 @@ import Questions from './../AdminDashboard/adminPages/question';
 import Answers from './../AdminDashboard/adminPages/answers';
 
 
-export default function App() {
+const App = props => {
     return (
         <React.Fragment>
             <section className='main-container-content isSignin-user-main-container-content'>
                 <section className='main-container-header'>
-                    <HeaderPrivate />
+                    <HeaderPrivate logout = {props.logout}/>
                 </section>
                 <Switch>
                     <Route path='/question' component={(Questions)} />
@@ -20,3 +20,4 @@ export default function App() {
         </React.Fragment>
     )
 }
+export default App;

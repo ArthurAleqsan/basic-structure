@@ -7,8 +7,8 @@
     font-size: 18px;
     margin-bottom: 10px;
     span {
-        color: #f84430;
-      }
+      color: #f84430;
+    }
   }
   .big-title {
     font-family: ubuntu-bold;
@@ -42,86 +42,92 @@
 .admin-create-question {
   padding: 5%;
 
-  .select-category-selectBox {
-    color: #4c5264;
-    padding: 60px 150px;
-    margin: 0 auto;
-    max-width: 1150px;
-    p {
-      padding-bottom: 10px;
-    }
-    .selectBox {
-      width: 850px;
-      border: 1px solid #e6e6e6;
-      border-radius: 5px;
-      background: #fafafa;
-    }
-    .create-new-post-body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-end;
-      .create-new-post-container {
-        width: 100%;
-      }
-      .create-post-btn {
-        margin: 10px;
-        background-image: $hiro-gradient;
-        font-size: 14px;
-        height: 30px;
-        font-size: 14px;
-        line-height: 0;
-        width: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        p {
-          padding-bottom: 0;
-        }
-      }
-    }
-  }
-  .show-selected-subcategories {
-    color: #4c5264;
-    padding: 0px 150px;
-    margin: 0 auto;
-    max-width: 1150px;
+  .create-new-post-body {
     display: flex;
-    .show-selected-subcategory {
-      margin: 5px;
-      border: 1px solid #e6e6e6;
-      background: #fafafa;
-      min-width: 100px;
-      padding: 5px;
-      border-radius: 5px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .create-new-post-container {
+      width: 100%;
+    }
+    .create-post-btn {
+      margin: 10px;
+      background-image: $hiro-gradient;
+      font-size: 14px;
+      height: 30px;
+      font-size: 14px;
+      line-height: 0;
+      width: 100px;
       display: flex;
-      position: relative;
       justify-content: center;
-      small {
-        position: absolute;
-        right: 5px;
-        top: -5px;
-        cursor: pointer;
-        color: #4c5264;
+      align-items: center;
+      cursor: pointer;
+      p {
+        padding-bottom: 0;
       }
     }
   }
-  .select-category-selectBox-datepicker {
+}
+.show-selected-subcategories {
+  color: #4c5264;
+  padding: 0px 150px;
+  margin: 0 auto;
+  max-width: 1150px;
+  display: flex;
+  .show-selected-subcategory {
+    margin: 5px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    min-width: 100px;
+    padding: 5px;
+    border-radius: 5px;
     display: flex;
-    justify-content: space-between;
-    .datePicker-container {
-      width: 415px;
-      .form-input {
-        width: 100%;
-      }
+    position: relative;
+    justify-content: center;
+    small {
+      position: absolute;
+      right: 5px;
+      top: -5px;
+      cursor: pointer;
+      color: #4c5264;
     }
   }
+}
+.select-category-selectBox-datepicker {
+  display: flex;
+  justify-content: space-between;
+  .datePicker-container {
+    width: 415px;
+    .form-input {
+      width: 100%;
+    }
+  }
+}
 
-  span {
-    color: #f84430;
+span {
+  color: #f84430;
+}
+
+.select-category-selectBox {
+  color: #4c5264;
+  padding: 60px 150px;
+  margin: 0 auto;
+  max-width: 1150px;
+  p {
+    padding-bottom: 10px;
   }
 }
 .announcements-page-container {
-    padding: 5%;
+  padding: 5%;
+  max-width: 1150px;
+  margin: 0 auto;
+  .select-category-selectBox {
+    padding: unset;
+  }
+}
+.selectBox {
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  background: #fafafa;
 }

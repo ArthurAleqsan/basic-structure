@@ -14,7 +14,7 @@ class PrivateRoute extends Component {
         if (hasToken && isAdmin) {
             Component = props => {
                 return (
-                    <RouteComponent {...props} hasToken = {hasToken} isAdmin = {isAdmin}/>
+                    <RouteComponent {...props} logout = {logout}/>
                 )
             } 
         }
@@ -46,9 +46,8 @@ const mapProperties = (state, ownProps) => {
 
 const mapActions = (dispatch) => {
     return {
-        logout(){
-            dispatch(logoutRequest())
-        }
+        logout : () => logoutRequest(),
+        
     }
 };
 

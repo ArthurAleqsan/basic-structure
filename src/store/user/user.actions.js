@@ -57,9 +57,8 @@ export function logout() {
 }
 
 export function logoutRequest() {
-    return (dispatch) => {
-
-    }
+    localStorage.clear();
+    window.location.reload();
 }
 // Change user old password to new password
 export function updatePassword(passwords) {
