@@ -14,11 +14,12 @@ class Router extends Component {
         super(props);
     }
     render() {
-        
+        const hasToken = localStorage.getItem('token');
+        const ACCESS_ADMIN = localStorage.getItem('scope') === "access:admin" ? true : false;
         return (
             <div className='main-container'>
                 <Switch>       
-                    <PublicRoute user={ this.props.user } path={PUBLIC_PATH} />
+                    <PublicRoute hasToken={ hasToken } isAdmin = {ACCESS_ADMIN} path={PUBLIC_PATH} />
                     <PrivateRoute path='/' component={App} />
                 </Switch>
             </div>

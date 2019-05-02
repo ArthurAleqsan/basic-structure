@@ -2,41 +2,32 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
-import { getUser ,logoutRequest } from './../../store/user/user.actions';
+import { logoutRequest } from './../../store/user/user.actions';
 
 class PrivateRoute extends Component {
 
     render() {
-        const { getUser, logout, component: RouteComponent, user, loggingIn,  ...rest } = this.props;
+        const {  logout, component: RouteComponent, loggingIn, ...rest } = this.props;
         const hasToken = !!localStorage.getItem('token');
-        const isMember = hasToken &&  localStorage.getItem('scope') === 'access:member' ? true : false;
+        const isAdmin = hasToken &&  localStorage.getItem('scope') === 'access:admin' ? true : false;
         let Component;
-        if (user) {
+        if (hasToken && isAdmin) {
             Component = props => {
                 return (
-                    <RouteComponent {...props}/>
+                    <RouteComponent {...props} hasToken = {hasToken} isAdmin = {isAdmin}/>
                 )
             } 
-        } else if (hasToken && isMember) {
-            Component = () => (
-                <div></div>
-            );
-        } 
+        }
         else {
             Component = () => (
                 <Redirect to={{
                     pathname: '/welcome',
-                    state: { from: this.props.location }
+                    state: { from: this.props.location } 
                 }}/>
             );
 
         }
-        //if(hasToken && !loggingIn){
-        //    logout();
-        //}
-        if (!user && hasToken) {
-            getUser();
-        }
+
 
         return (
             <Route {...rest} render={ props => Component(props) } />
@@ -55,9 +46,6 @@ const mapProperties = (state, ownProps) => {
 
 const mapActions = (dispatch) => {
     return {
-        getUser: () => {
-            dispatch(getUser());
-        },
         logout(){
             dispatch(logoutRequest())
         }

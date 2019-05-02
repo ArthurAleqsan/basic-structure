@@ -1,43 +1,19 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 
 import SelectCategory from './selectCategory';
-import { GetUserCategories } from './../../../store/signUp/signUp.actions';
-import Announcements from '../announcements/announcements';
-import { getAnnouncments } from './../../../store/admin/admin.actions';
+import Announcements from './../announcements/announcements';
 
-const Answers = props => {
-    const {getUserCategories, categories, getAnnouncments} = props
+const Answers = () => {
     const [selectedCategory, setCategory] = useState(null);
     return (
         <div>
             {!selectedCategory && (
-                <SelectCategory title='Category'  setCategory={setCategory} categories={categories} getUserCategories={getUserCategories} />
+                <SelectCategory title='Category'  setCategory={setCategory} />
             )}
             {selectedCategory && (
-                <Announcements  getAnnouncments = {getAnnouncments} selectedCategory = {selectedCategory}/>
+                <Announcements selectedCategory = {selectedCategory}/>
             )}
         </div>
     )
 }
-Answers.propTypes = {
-    categories: PropTypes.array.isRequired,
-    getUserCategories: PropTypes.func.isRequired,
-    getAnnouncments: PropTypes.func.isRequired,
-};
-const mapStateToProps = state => {
-    const { categories } = state.signUp;
-    return {
-        categories,
-    }
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        getUserCategories: () => dispatch(GetUserCategories()),
-        getAnnouncments: (categoryId,) => dispatch(getAnnouncments(categoryId)),
-
-    }
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Answers);
+export default Answers;

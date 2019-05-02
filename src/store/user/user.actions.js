@@ -2,15 +2,24 @@ import * as types from './../types';
 import UserService from './../../services/UserService';
 import AuthService from './../../services/AuthService';
 import CategoryService from './../../services/CategoryService';
-
+import 'antd/lib/message/style/index.css';
+import { message } from 'antd';
 
 export function login(form) {
-    return (dispatch) => {
+    return () => {
         AuthService.login(form).then(({ status, json }) => {
             if (AuthService.isOkStatus(status)) {
                 localStorage.setItem('token', json.accessToken);
                 localStorage.setItem('scope', json.scope);
-                dispatch(getUser());
+                if (json.scope === 'access:admin') {
+                    window.location.reload();
+                } else {
+                    message.error('Username or/and password is wrong.');
+                }
+
+            }
+            else {
+                message.error('Username or/and password is wrong.');
             }
         })
     }
@@ -19,11 +28,11 @@ export function getUser() {
     return (dispatch) => {
         UserService.getUser().then(({ status, json: currentUser }) => {
             if (UserService.isOkStatus(status)) {
-               //MessagesService.init(currentUser.id, LIMIT_OF_ROMMS).then( (rooms) => {
-               //    dispatch(subscribeForMessages());
-               //    dispatch(setRooms(rooms))
-               //});
-                
+                //MessagesService.init(currentUser.id, LIMIT_OF_ROMMS).then( (rooms) => {
+                //    dispatch(subscribeForMessages());
+                //    dispatch(setRooms(rooms))
+                //});
+
 
                 dispatch({
                     type: types.USER_GET_CURRENT_SUCCESS,
@@ -134,7 +143,7 @@ export function setUserRelationsAfterAddAction(offset, limit) {
         UserService.getUser().then(({ json: currentUser }) => {
             dispatch({
                 type: types.SET_RELATIONS_AFTER_ADD,
-                friendsPending : currentUser.friendsPending,
+                friendsPending: currentUser.friendsPending,
             })
             // FriendsService.getPendingRequests(offset, limit).then(resp => console.log(resp))
         });
@@ -146,7 +155,7 @@ export function setUserRelationsAfterRemoveAction() {
         UserService.getUser().then(({ json: currentUser }) => {
             dispatch({
                 type: types.SET_RELATIONS_AFTER_REMOVE,
-                friends : currentUser.friends,
+                friends: currentUser.friends,
             })
         })
 
@@ -158,8 +167,8 @@ export function setUserRelationsAfterApproveAction() {
         UserService.getUser().then(({ json: currentUser }) => {
             dispatch({
                 type: types.SET_RELATIONS_AFTER_APPROVE,
-                friends : currentUser.friends,
-                requested : currentUser.friendsRequested,
+                friends: currentUser.friends,
+                requested: currentUser.friendsRequested,
             })
         })
 

@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 
-import { removeAnnouncement, editAnnouncement } from './../../../store/admin/admin.actions';
+import { removeAnnouncement, editAnnouncement, getAnnouncments } from './../../../store/admin/admin.actions';
 import Announcement from './announcement';
+import Loader from './../../../components/componentsLib/Loader';
 
 
 const Announcements = props => {
@@ -19,9 +20,9 @@ const Announcements = props => {
     };
     return (
         <div className='announcements-page-container'>
-            {announcements.length > 0 && announcements.map(announcement => (
+            {announcements.length > 0 ? announcements.map(announcement => (
                 <Announcement key = {announcement.announcementId} announcement = {announcement} actions = {actions} />
-            ))}
+            )) : <Loader />}
         </div>
     )
 }
@@ -42,6 +43,7 @@ const mapDispatchToProps = dispatch => {
     return {
         removePost: (announcementId, categoryId) => dispatch(removeAnnouncement(announcementId, categoryId)),
         editPost: (announcementData, announcementId, categoryId) => dispatch(editAnnouncement(announcementData, announcementId, categoryId)),
+        getAnnouncments: (categoryId,) => dispatch(getAnnouncments(categoryId)),
     }
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Announcements);
