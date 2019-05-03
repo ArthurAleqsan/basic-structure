@@ -402,3 +402,17 @@
     }
   }
 }
+// Admin
+.main-container .isSignin-user-main-container-content .main-container-header .container {
+  width: 90%;
+}
+@media only screen and (max-width: 815px) {
+  .select-category-selectBox {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .select-category-selectBox {
+    padding: 80px 0;
+  }
+}

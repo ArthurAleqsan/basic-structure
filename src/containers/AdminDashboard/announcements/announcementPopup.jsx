@@ -6,7 +6,7 @@ const AnnouncementPopup = props => {
     const { close, closeEditPopup, announcement, editPost,} = props;
 
     return (
-        <div className="popup main-container-popup" id='popup' onClick={(e) => { e.target.id === "popup" ? close() : null }}>
+        <div className="popup main-container-popup" id='popup' onMouseDown={(e) => { e.target.id === "popup" ? close() : null }}>
             <div className="popup-dialog basicPopup">
             
                 <CreateQuestion

@@ -1,5 +1,6 @@
 .select-categories-container {
-  padding: 5%;
+  padding: 95px 5% 5%;
+  width: 90%;
   max-width: 1150px;
   margin: 0 auto;
   .select-categories-container-header {
@@ -64,6 +65,7 @@
       cursor: pointer;
       p {
         padding-bottom: 0;
+        cursor: pointer;
       }
     }
   }
@@ -95,6 +97,7 @@
 }
 .select-category-selectBox-datepicker {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   .datePicker-container {
     width: 415px;
@@ -118,8 +121,9 @@ span {
   }
 }
 .announcements-page-container {
-  padding: 5%;
+  padding: 90px 5% 5%;
   max-width: 1150px;
+  width: 90%;
   margin: 0 auto;
   .select-category-selectBox {
     padding: unset;
