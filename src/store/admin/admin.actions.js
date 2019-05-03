@@ -11,7 +11,7 @@ export function createSingleAnnouncement(data) {
     })
 }
 
-export function getAnnouncments(categoryId, limit = 20, offset = 0) {
+export function getAnnouncments(categoryId, limit = 40, offset = 0) {
     return (dispatch) => {
         AnnouncementsService.getListOfAnnouncements({ categoryId, limit, offset })
             .then(announcements => {
