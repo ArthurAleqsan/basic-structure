@@ -131,3 +131,45 @@ span {
   border-radius: 5px;
   background: #fafafa;
 }
+.create-post-buttons-container {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 12px;
+  .react-fine-uploader-file-input-container span {
+    display: none;
+  }
+  .add-media-post {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    .add-media {
+      width: 30px;
+      height: 26px;
+      position: absolute;
+      bottom: 0px;
+    }
+    span {
+      color: #60c3ff;
+      padding-left: 35px;
+      cursor: pointer;
+    }
+  }
+  .uploaded-media-item-remove {
+    position: absolute;
+    width: 90%;
+    height: 120px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    opacity: 0.5;
+    z-index: 1;
+    cursor: pointer;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

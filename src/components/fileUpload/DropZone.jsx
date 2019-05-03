@@ -111,7 +111,7 @@ function Preview({ file, remove }) {
     const videoExtensions = ['mp4', 'mov', 'wmv', 'avi'];
     return (
         <div className='create-post-preview-container'>
-            {videoExtensions.indexOf(file.extention) > -1
+            {videoExtensions.indexOf(file.extension) > -1
                 ? (<div className='uploaded-media-container'>
                     <div className='uploaded-media-item-remove' onClick={() => remove()}><img src={'/assets/images/icons/close.svg'} /></div>
                     <VideoBox url={file.url} className='create-post-video-preview' />

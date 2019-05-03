@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next/hooks';
 import PropTypes from 'prop-types';
@@ -9,6 +9,7 @@ import './../../../../assets/styles/datepicker.scss'
 
 import { Button } from './../../../components/componentsLib/simpleUiComponents';
 import { createSingleAnnouncement } from './../../../store/admin/admin.actions';
+import DropZone from './../../../components/fileUpload/DropZone';
 
 const CreateQuestion = props => {
     const { categories, selectedCategory, createSingleAnnouncement, isEditAnnouncement, editableAnnouncement, editPost, close, closeEditPopup } = props;
@@ -19,6 +20,7 @@ const CreateQuestion = props => {
         activeDateFrom: isEditAnnouncement ? editableAnnouncement.activeDateFrom : '',
         activeDateTo: isEditAnnouncement ? editableAnnouncement.activeDateTo : '',
         categoryId: isEditAnnouncement ? editableAnnouncement.categoryId : '',
+        mediaArray: [],
     });
 
     useEffect(() => {
@@ -29,11 +31,24 @@ const CreateQuestion = props => {
         setNewAnnouncement({ ...announcement, categoryId });
     };
 
+    const [pending, setPending] = useState(false);
+
+    const addMedia = useCallback((url, pending) => {
+        if (url) setNewAnnouncement({ ...announcement, mediaArray: [...announcement.mediaArray, { url }] });
+        setPending(pending);
+    }, [announcement]);
+
+    const removeMedia = useCallback((url, pending) => {
+        const newMediaArray = announcement.mediaArray.filter((item) => item.url !== url);
+        setNewAnnouncement({ ...announcement, mediaArray: newMediaArray });
+        setPending(pending);
+    }, [announcement]);
+
 
 
     const createAnnouncement = () => {
         event.preventDefault();
-        if(isEditAnnouncement) {
+        if (isEditAnnouncement) {
             editPost(announcement, editableAnnouncement.announcementId, announcement.categoryId);
             close();
             closeEditPopup();
@@ -84,7 +99,7 @@ const CreateQuestion = props => {
             </div>
 
             <div className='select-category-selectBox'>
-            <p>{t('Message')}<span> *</span></p>
+                <p>{t('Message')}<span> *</span></p>
                 <form className='new-post-form' onSubmit={e => e.preventDefault()}>
                     <div className='create-new-post-body'>
                         <div className='create-new-post-container'>
@@ -95,6 +110,24 @@ const CreateQuestion = props => {
                                 value={announcement.text}
                                 onChange={(e) => setNewAnnouncement({ ...announcement, text: e.target.value })}
                             />
+                            <div className='create-post-buttons-container'>
+                            
+                                <DropZone className='drop-zone'
+                                    handleComplete={(d, pending) => addMedia(d, pending)}
+                                    remove={(url, pending) => removeMedia(url, pending)}
+                                    multiple={true}
+                                    // defaultUploads={url ? [url] : []}
+                                    hidePreview={false}
+                                >
+                                    <div className={`add-media-post `}>
+                                        <i className='add-media' />
+                                        {<span>{t('Photo/Video')}</span>}
+                                    </div>
+                                </DropZone>
+                                {/* <div className='add-media-post smile-container'>
+                                    <Emoji handleSelect={addEmoji} fromTextArea={true} />
+                                </div> */}
+                            </div>
                         </div>
 
                         <Button className='create-post-btn' onClick={() => createAnnouncement()}>Send</Button>
@@ -118,7 +151,7 @@ CreateQuestion.propTypes = {
 };
 const mapStateToProps = state => {
     return {
-        categories : state.signUp.categories,
+        categories: state.signUp.categories,
     }
 };
 
