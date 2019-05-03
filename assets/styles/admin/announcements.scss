@@ -125,3 +125,15 @@
         color: #4c5264;
     }
 }
+.post-text {
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-mediaContent {
+    display: flex;
+    flex-wrap: wrap;
+    .post-image {
+        width: 160px;
+        height: 160px;
+    }
+}

@@ -23,6 +23,7 @@ const CreateQuestion = props => {
         categoryId: isEditAnnouncement ? editableAnnouncement.categoryId : '',
         mediaArray: [],
     });
+    const [doRestore, restoreMediaArray] = useState(false);
 
     useEffect(() => {
         setNewAnnouncement({ ...announcement, categoryId: selectedCategory });
@@ -50,19 +51,21 @@ const CreateQuestion = props => {
     const createAnnouncement = () => {
         event.preventDefault();
         if (isEditAnnouncement) {
-            editPost(announcement, editableAnnouncement.announcementId, announcement.categoryId);
+            delete announcement.mediaArray;
+            editPost(announcement, editableAnnouncement.announcementId);
             close();
             closeEditPopup();
         } else {
             createSingleAnnouncement(announcement);
-            Object.keys(announcement).forEach( k => {
+            Object.keys(announcement).forEach(k => {
                 announcement[k] = ''
             });
-            // message.success('Creation of announcement is successfully finished.')
-            setNewAnnouncement({ ...announcement, categoryId: selectedCategory,  mediaArray : [] });
-            // setNewAnnouncement({...announcement, mediaArray : []});
+            restoreMediaArray(true);
+            setNewAnnouncement({ ...announcement, categoryId: selectedCategory,});
+
         }
-    }
+    };
+
 
     return (
         <div className='admin-create-question'>
@@ -111,6 +114,7 @@ const CreateQuestion = props => {
                 <p>{t('Message')}<span> *</span></p>
                 <form className='new-post-form' onSubmit={e => e.preventDefault()}>
                     <div className='create-new-post-body'>
+                    
                         <div className='create-new-post-container'>
                             <textarea
                                 className='create-new-post-input'
@@ -119,24 +123,27 @@ const CreateQuestion = props => {
                                 value={announcement.text}
                                 onChange={(e) => setNewAnnouncement({ ...announcement, text: e.target.value })}
                             />
-                            <div className='create-post-buttons-container'>
+                            {!isEditAnnouncement && (
+                                <div className='create-post-buttons-container'>
 
-                                <DropZone className='drop-zone'
-                                    handleComplete={(d, pending) => addMedia(d, pending)}
-                                    remove={(url, pending) => removeMedia(url, pending)}
-                                    multiple={true}
-                                    // defaultUploads={url ? [url] : []}
-                                    hidePreview={false}
-                                >
-                                    <div className={`add-media-post `}>
-                                        <i className='add-media' />
-                                        {<span>{t('Photo/Video')}</span>}
-                                    </div>
-                                </DropZone>
-                                {/* <div className='add-media-post smile-container'>
-                                    <Emoji handleSelect={addEmoji} fromTextArea={true} />
-                                </div> */}
-                            </div>
+                                    <DropZone doRestore = {doRestore} className='drop-zone'
+                                        handleComplete={(d, pending) => addMedia(d, pending)}
+                                        remove={(url, pending) => removeMedia(url, pending)}
+                                        multiple={true}
+                                        // defaultUploads={url ? [url] : []}
+                                        hidePreview={false}
+                                    >
+                                        <div className={`add-media-post `}>
+                                            <i className='add-media' />
+                                            {<span>{t('Photo/Video')}</span>}
+                                        </div>
+                                    </DropZone>
+                                    {/* <div className='add-media-post smile-container'>
+                                        <Emoji handleSelect={addEmoji} fromTextArea={true} />
+                                    </div> */}
+                                </div>
+
+                            )}
                         </div>
 
                         <Button className='create-post-btn' onClick={() => createAnnouncement()}>Send</Button>

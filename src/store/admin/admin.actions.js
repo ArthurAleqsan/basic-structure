@@ -30,7 +30,7 @@ export function removeAnnouncement(announcementId, categoryId) {
             });
     }
 }
-export function editAnnouncement(data, announcementId, categoryId) {
+export function editAnnouncement(data, announcementId,) {
     return (dispatch, getState) => {
         AnnouncementsService.editAnnouncement(data, announcementId)
             .then((announcement) => {
@@ -38,7 +38,7 @@ export function editAnnouncement(data, announcementId, categoryId) {
                 let newAnnouncments = announcements;
                 const findFn = (e) => e.announcementId === announcementId;
 
-                if (categoryId === announcement.announcementId) {
+                if (announcementId === announcement.announcementId) {
                     const updateFn = () => ({ ...announcement });
                     newAnnouncments = updateInArray(newAnnouncments, findFn, updateFn);
                 } else {

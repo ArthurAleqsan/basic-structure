@@ -26,6 +26,7 @@ class D extends Component {
                 },
             }
         });
+        this.previewRef = React.createRef();
     }
 
     componentDidMount() {
@@ -65,13 +66,22 @@ class D extends Component {
         const pending = !!newPendingFiles.length;
         this.props.remove(url, pending);
     }
+    restorePrewiew () {
+        // if(this.props.doRestore) {
+            this.setState({
+                ...this.state,
+                uploadedFiles: [],
+            });
+        // }
+    }
+
 
     render() {
         const { multiple, className } = this.props;
         return (<div className={className}>
 
             {this.state.uploadedFiles.map((file) => <div key={file.url} className='priview-item-container'>
-                <Preview key={file.url} file={file} remove={() => this.remove(file.url)} />
+                <Preview key={file.url}  file={file} remove={() => this.remove(file.url)} />
             </div>)}
             <ProgressBar uploader={this.uploader} />
 

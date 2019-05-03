@@ -27,6 +27,7 @@ const HeaderPrivate = props => {
 };
 HeaderPrivate.propTypes = {
     location: PropTypes.object.isRequired,
+    logout: PropTypes.func.isRequired,
 };
 
 export default withRouter(HeaderPrivate);
