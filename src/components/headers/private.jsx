@@ -18,7 +18,7 @@ const HeaderPrivate = props => {
                     <div className={`dashboard-nav-tab ${activeTab === 'question' ? 'active-tab' : ''}`} onClick={() => toogleTab('question')}>{t('Question')}</div>
                 </Link>
                 <Link to='/answers'>
-                    <div className={`dashboard-nav-tab ${activeTab === 'answers' ? 'active-tab' : ''}`} onClick={() => toogleTab('answers')}>{t('Answers')}</div>
+                    <div className={`dashboard-nav-tab ${activeTab === 'answers' ? 'active-tab' : ''}`} onClick={() => toogleTab('answers')}>{t('Announcements')}</div>
                 </Link>
             </div>
             <p onClick = {() => props.logout()}>Log Out</p>

@@ -7,6 +7,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import './../../../../assets/styles/datepicker.scss'
 
+
 import { Button } from './../../../components/componentsLib/simpleUiComponents';
 import { createSingleAnnouncement } from './../../../store/admin/admin.actions';
 import DropZone from './../../../components/fileUpload/DropZone';
@@ -31,17 +32,17 @@ const CreateQuestion = props => {
         setNewAnnouncement({ ...announcement, categoryId });
     };
 
-    const [pending, setPending] = useState(false);
+    // const [pending, setPending] = useState(false);
 
     const addMedia = useCallback((url, pending) => {
         if (url) setNewAnnouncement({ ...announcement, mediaArray: [...announcement.mediaArray, { url }] });
-        setPending(pending);
+        // setPending(pending);
     }, [announcement]);
 
     const removeMedia = useCallback((url, pending) => {
         const newMediaArray = announcement.mediaArray.filter((item) => item.url !== url);
         setNewAnnouncement({ ...announcement, mediaArray: newMediaArray });
-        setPending(pending);
+        // setPending(pending);
     }, [announcement]);
 
 
@@ -54,6 +55,12 @@ const CreateQuestion = props => {
             closeEditPopup();
         } else {
             createSingleAnnouncement(announcement);
+            Object.keys(announcement).forEach( k => {
+                announcement[k] = ''
+            });
+            // message.success('Creation of announcement is successfully finished.')
+            setNewAnnouncement({ ...announcement, categoryId: selectedCategory,  mediaArray : [] });
+            // setNewAnnouncement({...announcement, mediaArray : []});
         }
     }
 
@@ -74,6 +81,7 @@ const CreateQuestion = props => {
                     <label>{t(`Announcement active From `)} <span> *</span></label>
 
                     <DatePicker
+                        autoComplete='off'
                         name='activeFrom'
                         className='form-input'
                         placeholderText='DD/MM/YY'
@@ -87,6 +95,7 @@ const CreateQuestion = props => {
                     <label>{t(`Announcement active To `)} <span> *</span></label>
 
                     <DatePicker
+                        autoComplete='off'
                         name='activeTo'
                         className='form-input'
                         placeholderText='DD/MM/YY'
@@ -111,7 +120,7 @@ const CreateQuestion = props => {
                                 onChange={(e) => setNewAnnouncement({ ...announcement, text: e.target.value })}
                             />
                             <div className='create-post-buttons-container'>
-                            
+
                                 <DropZone className='drop-zone'
                                     handleComplete={(d, pending) => addMedia(d, pending)}
                                     remove={(url, pending) => removeMedia(url, pending)}

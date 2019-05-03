@@ -10,7 +10,7 @@ class AnnouncementsService extends Request {
             method: 'POST',
             body: JSON.stringify(data),
         };
-        return this.send({ path: '/', options }).then(({ json, }) => json);
+        return this.send({ path: '/', options }).then(({ status, }) => (status));
     }
     getListOfAnnouncements(query) {
         const newQuery = {};

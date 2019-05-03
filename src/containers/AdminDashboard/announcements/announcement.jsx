@@ -3,11 +3,29 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next/hooks';
 import FormatedTime from './../../../components/formatedTime/FormatedTime';
 import EditPost from './../../../components/popups/editPost';
+import MediaPost from './../../../components/posts/typeOfPosts/mediaPost';
 
 const Announcement = props => {
-    const { announcement, actions, } = props;
+    const { announcement, actions, type } = props;
     const [t] = useTranslation();
     const [editPostPopup, setPopup] = useState(null);
+    // console.log(type)
+    let _announcement = null;
+
+    {
+        switch (type) {
+            case 'text':
+                _announcement = <div className='answer-container-text'>
+                    {announcement.text}
+                </div>
+                break;
+                case 'media':
+                _announcement = <div className='answer-container-text'>
+                {/* {announcement.text} */}
+                {<MediaPost post = {announcement} />}
+            </div> 
+        }
+    }
     return (
         <div className='answer-container'>
             <div className='answer-container-header'>
@@ -34,7 +52,7 @@ const Announcement = props => {
 
             </div>
             <div className='answer-container-body'>
-                <div className='answer-container-text'>{announcement.text}</div>
+                {_announcement}
             </div>
         </div>
     )
@@ -42,5 +60,6 @@ const Announcement = props => {
 Announcement.propTypes = {
     announcement: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
+    type: PropTypes.string.isRequired,
 };
 export default Announcement;

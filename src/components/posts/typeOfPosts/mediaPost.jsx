@@ -5,7 +5,7 @@ import VideoPost from './../postsTemplates/videoPost';
 import MixedMediaPost from './../postsTemplates/mixedMediaPost';
 
 const MediaPost = props => {
-    const { post, actions } = props;
+    const { post, } = props;
     let postType = null;
     let mediatype = null;
     if(post.mediaArray.every(post => post.mediaType === 'photo' )){
@@ -18,13 +18,13 @@ const MediaPost = props => {
 
     switch (mediatype) {
         case 'photo':
-            postType = (<ImagePost post={post} actions={actions} />);
+            postType = (<ImagePost post={post}  />);
             break;
         case 'video':
-            postType = (<VideoPost post={post} actions={actions} />);
+            postType = (<VideoPost post={post} />);
             break;
         case 'mixed':
-            postType = (<MixedMediaPost post={post} actions={actions} />);
+            postType = (<MixedMediaPost post={post} />);
             break;
 
     }
@@ -37,6 +37,5 @@ const MediaPost = props => {
 }
 MediaPost.propTypes = {
     post: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired,
 };
 export default MediaPost;

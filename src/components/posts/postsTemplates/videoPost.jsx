@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import VideoBox from './../../componentsLib/videoBox';
-import ImagePopup from './../../popups/imagePopup';
+// import ImagePopup from './../../popups/imagePopup';
 
 const VideoPost = props => {
     const { text, mediaArray, user } = props.post;
@@ -22,15 +22,15 @@ const VideoPost = props => {
                                 key={video.mediaId}
                                 url={video.url}
                                 id={videosArr.indexOf(video.url)}
-                                openVideoPopup={() => {
-                                    setPopUpState(<ImagePopup index={videosArr.indexOf(video.url)}
-                                        className='videoPopup'
-                                        close={() => setPopUpState(null)}
-                                        type={'video'}
-                                        imagesArr={videosArr}
-                                        user = {user} />)
+                                // openVideoPopup={() => {
+                                //     setPopUpState(<ImagePopup index={videosArr.indexOf(video.url)}
+                                //         className='videoPopup'
+                                //         close={() => setPopUpState(null)}
+                                //         type={'video'}
+                                //         imagesArr={videosArr}
+                                //         user = {user} />)
                                         
-                                }}
+                                // }}
                             />
 
 

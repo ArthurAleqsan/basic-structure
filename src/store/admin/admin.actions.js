@@ -2,8 +2,13 @@ import * as types from "./../types";
 import AnnouncementsService from "./../../services/AnnouncementsService";
 import { updateInArray, removeFromArray } from "./../../util/helpers";
 
+import 'antd/lib/message/style/index.css';
+import { message } from 'antd';
+
 export function createSingleAnnouncement(data) {
-    AnnouncementsService.createAnnouncement(data);
+    AnnouncementsService.createAnnouncement(data).then((status) => {
+        AnnouncementsService.isOkStatus(status) ? message.success('Creation of announcement is successfully finished.') : message.error('Please fiel all fields.');
+    })
 }
 
 export function getAnnouncments(categoryId, limit = 20, offset = 0) {

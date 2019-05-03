@@ -36,7 +36,7 @@ const Announcements = props => {
 
             </div>
             {announcements ? announcements.map(announcement => (
-                <Announcement key={announcement.announcementId} announcement={announcement} actions={actions} />
+                <Announcement key={announcement.announcementId} announcement={announcement} actions={actions} type = {announcement.announcementType} />
             )) : <Loader />}
         </div>
     )

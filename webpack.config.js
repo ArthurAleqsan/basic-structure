@@ -29,7 +29,7 @@ const API_ANNOUNCEMENTS_URL = 'http://localhost:3000/announcements';
 
 
 
-// const PLACES = 'http://localhost:4000/places';
+const PLACES = 'http://localhost:4000/places';
 
 //const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
 
