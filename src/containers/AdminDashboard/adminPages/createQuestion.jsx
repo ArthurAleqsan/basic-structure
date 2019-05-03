@@ -33,17 +33,13 @@ const CreateQuestion = props => {
         setNewAnnouncement({ ...announcement, categoryId });
     };
 
-    // const [pending, setPending] = useState(false);
-
-    const addMedia = useCallback((url, pending) => {
+    const addMedia = useCallback((url,) => {
         if (url) setNewAnnouncement({ ...announcement, mediaArray: [...announcement.mediaArray, { url }] });
-        // setPending(pending);
     }, [announcement]);
 
-    const removeMedia = useCallback((url, pending) => {
+    const removeMedia = useCallback((url,) => {
         const newMediaArray = announcement.mediaArray.filter((item) => item.url !== url);
         setNewAnnouncement({ ...announcement, mediaArray: newMediaArray });
-        // setPending(pending);
     }, [announcement]);
 
 
@@ -130,7 +126,6 @@ const CreateQuestion = props => {
                                         handleComplete={(d, pending) => addMedia(d, pending)}
                                         remove={(url, pending) => removeMedia(url, pending)}
                                         multiple={true}
-                                        // defaultUploads={url ? [url] : []}
                                         hidePreview={false}
                                     >
                                         <div className={`add-media-post `}>

@@ -36,7 +36,7 @@ class D extends Component {
 
         this.uploader.on('submitted', id => {
             const pendingFiles = this.state.pendingFiles;
-            pendingFiles.push({id});
+            pendingFiles.push({ id });
             this.setState({ pendingFiles });
             this.props.handleComplete(null, true);
         });
@@ -44,21 +44,29 @@ class D extends Component {
         this.uploader.on('complete', (id, b, data) => {
             const { uploadedFiles } = this.state;
             const newPendingFiles = this.removeFromPending(id);
-            this.setState({ pendingFiles: newPendingFiles, uploadedFiles: [...uploadedFiles, {...data, id}] });
+            this.setState({ pendingFiles: newPendingFiles, uploadedFiles: [...uploadedFiles, { ...data, id }] });
             const pending = !!newPendingFiles.length;
             this.props.handleComplete(data.url, pending)
         })
     }
+    componentDidUpdate(prevProps) {
+        if (prevProps.doRestore !== this.props.doRestore) {
+            this.setState({
+                ...this.state,
+                uploadedFiles: [],
+            });
+        }
+      }
 
     openUploader() {
         document.getElementById('uploadField').click();
     }
-    
+
     removeFromPending(id) {
         const { pendingFiles } = this.state;
         return pendingFiles.filter(file => id !== file.id);
     }
-    
+
     remove(url, id) {
         const { uploadedFiles } = this.state;
         const newPendingFiles = this.removeFromPending(id);
@@ -66,22 +74,23 @@ class D extends Component {
         const pending = !!newPendingFiles.length;
         this.props.remove(url, pending);
     }
-    restorePrewiew () {
+    restorePrewiew() {
         // if(this.props.doRestore) {
-            this.setState({
-                ...this.state,
-                uploadedFiles: [],
-            });
+        this.setState({
+            ...this.state,
+            uploadedFiles: [],
+        });
         // }
     }
 
 
     render() {
-        const { multiple, className } = this.props;
+        const { multiple, className, doRestore } = this.props;
+
         return (<div className={className}>
 
             {this.state.uploadedFiles.map((file) => <div key={file.url} className='priview-item-container'>
-                <Preview key={file.url}  file={file} remove={() => this.remove(file.url)} />
+                <Preview key={file.url} file={file} remove={() => this.remove(file.url)} />
             </div>)}
             <ProgressBar uploader={this.uploader} />
 
