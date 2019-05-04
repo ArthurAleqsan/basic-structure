@@ -8,7 +8,9 @@ import { message } from 'antd';
 export function login(form) {
     return () => {
         AuthService.login(form).then(({ status, json }) => {
+
             if (AuthService.isOkStatus(status)) {
+                localStorage.setItem('accessTokenExpiresAt', json.accessTokenExpiresAt)
                 localStorage.setItem('token', json.accessToken);
                 localStorage.setItem('scope', json.scope);
                 if (json.scope === 'access:admin') {
