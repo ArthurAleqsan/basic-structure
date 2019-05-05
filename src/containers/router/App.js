@@ -13,8 +13,8 @@ const App = props => {
                     <HeaderPrivate logout = {props.logout}/>
                 </section>
                 <Switch>
-                    <Route path='/question' component={(Questions)} />
-                    <Route path='/answers' component={(Answers)} />
+                    <Route path='/create_a_announcement' component={(Questions)} />
+                    <Route path='/announcements' component={(Answers)} />
                 </Switch>
             </section>
         </React.Fragment>

@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import HeaderPublic from '../../components/headers/public';
 
 
 const PublicRoute = props => {
-    if (props.hasToken && props.isAdmin) props.history.push('/question'); 
+    const {hasToken, isAdmin, history} = props;
+    if (hasToken && isAdmin) history.push('/create_a_announcement'); 
     return(<React.Fragment>
             <section className='main-container-content sign-up-main-container-content'>
                     <section className='main-container-header'>
@@ -16,7 +17,9 @@ const PublicRoute = props => {
 };
 
 PublicRoute.propTypes = {
-    hasToken: PropTypes.any,
+    hasToken: PropTypes.bool,
+    isAdmin: PropTypes.bool,
+    history: PropTypes.object,
 }; 
 
 export default withRouter(PublicRoute);
