@@ -9,11 +9,10 @@ class Router extends Component {
         super(props);
     }
     render() {
-
         return (
             <div className='main-container'>
                 <Switch>
-                    <Route path = '/'  component={App} />
+                    <Route path = '/'  component={App} /> 
                 </Switch>
             </div>
         );
