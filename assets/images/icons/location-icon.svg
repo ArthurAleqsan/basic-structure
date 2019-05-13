@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="19.521" height="22.865" viewBox="0 0 19.521 22.865">
-  <g id="location-icon" transform="translate(0.516 0.473)">
-    <path id="path" d="M15.051,15.813l-5.033,5.251a1.056,1.056,0,0,1-1.532,0L3.345,15.7l-.875-.985A8.512,8.512,0,0,1,.61,7.936a8.75,8.75,0,0,1,17.4,1.313,8.651,8.651,0,0,1-2.3,5.908Z" transform="translate(0 0)" fill="#5887f9" stroke="#4c5264" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
-    <circle id="ellipse" cx="3.282" cy="3.282" r="3.282" stroke-width="1" transform="translate(5.971 5.967)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="#5887f9"/>
-  </g>
-</svg>

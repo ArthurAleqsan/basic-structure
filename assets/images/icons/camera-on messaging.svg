@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="24.229" height="18.763" viewBox="0 0 24.229 18.763">
-  <g id="camera-on_messaging" data-name="camera-on messaging" transform="translate(0.5 0.5)">
-    <ellipse id="ellipse" cx="4.782" cy="4.782" rx="4.782" ry="4.782" stroke-width="1" transform="translate(6.832 5.466)" stroke="#60c3ff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"/>
-    <ellipse id="ellipse-2" data-name="ellipse" cx="0.683" cy="0.683" rx="0.683" ry="0.683" transform="translate(19.129 5.466)" fill="none" stroke="#60c3ff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
-    <path id="path" d="M22.225,3.233H17.716L17.17,1.456A1.312,1.312,0,0,0,15.94.5H8.288a1.312,1.312,0,0,0-1.23.956L6.375,3.233H2a1.516,1.516,0,0,0-1.5,1.5V16.76a1.516,1.516,0,0,0,1.5,1.5H22.225a1.516,1.516,0,0,0,1.5-1.5V4.736A1.516,1.516,0,0,0,22.225,3.233Z" transform="translate(-0.5 -0.5)" fill="none" stroke="#60c3ff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="1"/>
-  </g>
-</svg>

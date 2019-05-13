@@ -20,19 +20,6 @@ const outputPath = path.resolve(__dirname, env === 'production' ? 'public' : 'pu
 
 
 
-const API_USER_URL = 'http://localhost:3000/api';
-const API_AUTH_URL = 'http://localhost:3000/oauth';
-const API_UPLOAD_URL = 'http://localhost:3000/upload';
-const API_POSTS_URL = 'http://localhost:3000/posts';
-const API_MEDIA_URL = 'http://localhost:3000/media';
-const API_ANNOUNCEMENTS_URL = 'http://localhost:3000/announcements';
-
-
-
-const PLACES = 'http://localhost:4000/places';
-
-//const API_AUTH_URL = 'http://authorization-api-production.us-east-1.elasticbeanstalk.com/api/v1';
-
 const config = {
 
     entry: {
@@ -127,36 +114,7 @@ const config = {
         host: '0.0.0.0',
         disableHostCheck: true,
         historyApiFallback: true,
-        proxy: {
-            '/api': {
-                target: API_USER_URL,
-                pathRewrite: {'^/api' : ''}
-            },
-            '/oauth': {
-                target: API_AUTH_URL,
-                pathRewrite: {'^/oauth' : ''}
-            },
-            '/upload': {
-                target: API_UPLOAD_URL,
-            },
-            '/posts' : {
-                target : API_POSTS_URL,
-                pathRewrite: {'^/posts' : ''}
-            },
-            '/media' : {
-                target : API_MEDIA_URL,
-                pathRewrite: {'^/media' : ''}
-            },
-            '/announcements': {
-                target : API_ANNOUNCEMENTS_URL,
-                pathRewrite: {'^/announcements' : ''}
-            },
-            '/places' : {
-                target: PLACES,
-                pathRewrite: {'^/places' : ''}
-            },
-
-        }
+      
     },
 
 };
