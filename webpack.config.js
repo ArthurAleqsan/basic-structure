@@ -4,8 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
-const glob = require('glob');
-const PurifyCSSPlugin = require('purifycss-webpack');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 const path = require('path');
@@ -13,8 +11,6 @@ const modules = require('./webpack.config.modules');
 
 const publicPath = '/public';
 const srcPath = path.join(__dirname, 'src');
-const defaultSkinName = 'default';
-const skin = process.env.skin || defaultSkinName;
 const env = 'production';
 const outputPath = path.resolve(__dirname, env === 'production' ? 'public' : 'publicDev');
 
@@ -67,7 +63,6 @@ const config = {
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(env),
-            'process.env.API_USER_URL':JSON.stringify(API_USER_URL),
         }),
         new HtmlWebpackPlugin({
             template: './index.html',

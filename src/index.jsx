@@ -10,11 +10,9 @@ import './i18n';
 render((
     <Provider store={store} >
         <Router history={history}>
-            {/* <React.unstable_ConcurrentMode > */}
             <Suspense fallback={<Loader />}>
                 <Routes />
             </Suspense>
-            {/* </React.unstable_ConcurrentMode> */}
         </Router>
     </Provider>
 ), document.getElementById('app'));

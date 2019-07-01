@@ -1,24 +1,25 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import createHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 import thunk from 'redux-thunk';
 import rootReducer from './reducer';
 
-export const history = createHistory({
-  basename: '',
-  forceRefresh: false,
-  keyLength: 6,
-  getUserConfirmation: (message, callback) => callback(window.confirm(message))
+export const history = createBrowserHistory({
+    basename: '',
+    forceRefresh: false,
+    keyLength: 6,
+    getUserConfirmation: (message, callback) => callback(window.confirm(message))
 });
+
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let array_middleware = [thunk];
 function getCompose() {
-  if (process.env.NODE_ENV !== 'production') {
-    return composeEnhancers(applyMiddleware(...array_middleware));
-  } else {
-    return applyMiddleware(...array_middleware);
-  }
+    if (process.env.NODE_ENV !== 'production') {
+        return composeEnhancers(applyMiddleware(...array_middleware));
+    } else {
+        return applyMiddleware(...array_middleware);
+    }
 }
 const initialState = {};
 const store = createStore(

@@ -37,7 +37,7 @@ module.exports = {
                     options: {
                     plugins: [
                         autoprefixer({
-                            browsers: ['ie >= 8', 'last 20 version']
+                            overrideBrowserslist: ['ie >= 8', 'last 20 version']
                         })
                     ]
                     }

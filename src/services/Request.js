@@ -48,7 +48,6 @@ export default class ServerConnector {
         const headersObj = Object.assign({
             'content-type': 'application/json',
             'Cache-Control': 'no-cache',
-            "authorization": `Bearer ${localStorage.getItem('token')}`,
         }, req.headers);
 
         const headers = new Headers(headersObj);
