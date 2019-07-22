@@ -47,11 +47,6 @@ module.exports = {
                 }
             ],
         },
-        // {
-        //     // make all files ending in .json5 use the `json5-loader`
-        //     test: /\.json$/,
-        //     loader: 'json-loader'
-        // },
         {
             // make all files ending in .json5 use the `json5-loader`
             test: /\.json5$/,

@@ -1,5 +1,5 @@
 const express = require('express');
-const proxy = require('http-proxy-middleware');
+// const proxy = require('http-proxy-middleware');
 const path = require('path');
 
 const app = express();
@@ -20,13 +20,3 @@ app.listen(PORT, () => {
     console.log(`Listening on ${PORT}`);
 });
 
-
-function onError(err, req, res) {
-    console.log(err, req, res)
-    res.writeHead(500, {
-        'Content-Type': 'text/plain'
-    })
-    res.end(
-        'Something went wrong. And we are reporting a custom error message.'
-    )
-}
