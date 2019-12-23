@@ -1,6 +1,15 @@
 * {
     box-sizing: border-box;
 }
+  
+@font-face {
+    font-family: gothamBblack;
+    src: url(../fonts/GOTHAMBLACK.ttf);
+  }
+  @font-face {
+    font-family: gothamRounded;
+    src: url(../fonts/GothamRnd-Light.otf);
+  }
 
 html, body {
     border: 0;
@@ -8,6 +17,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%; 
+    background: #394f8f;
 }
 
 div, span, object, iframe, img, table, caption, thead, tbody,
@@ -71,5 +81,10 @@ img {
     object-fit: cover;
 }
 
+@import './general';
+@import './header';
+@import './home';
+@import './home.second';
+@import './location';
 
 

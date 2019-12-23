@@ -11,7 +11,7 @@ const StyledImageBox = styled.div`
     /* z-index: ${props => props.z_index};; */
     border-radius: 5px;
     margin: 10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     background-color: rgba(0,0,0,0.5);
     /* background-image: var(--hiroGradient); */
 `;

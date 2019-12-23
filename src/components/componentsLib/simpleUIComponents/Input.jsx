@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next/hooks';
+import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 

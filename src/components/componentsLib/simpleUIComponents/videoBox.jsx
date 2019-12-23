@@ -1,6 +1,6 @@
 import React, {useCallback, useRef} from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next/hooks';
+import { useTranslation } from 'react-i18next';
 
 const VideoBox = props => {
     const { url, pause,  openVideoPopup, controls } = props;

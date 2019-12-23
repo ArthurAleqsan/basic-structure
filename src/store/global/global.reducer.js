@@ -1,8 +1,6 @@
 import * as types from './../types';
 
-const initialState = {
-    
-};
+const initialState = {};
 
 export default function globalReducer(state = initialState, action) {
     switch (action.type) {

@@ -1,0 +1,29 @@
+$hero-color: #394f8f;
+$hero-font-color: #a0a0a6;
+
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+:root{
+    --heroColor: #{$hero-color};
+    --heroFontColor: #{$hero-font-color};
+}
+.main-content {
+    margin-top: 60px;
+}
+.main-content > div {
+    background: $hero-color;
+}
+.contact-btn {
+    background: $hero-color;
+}
