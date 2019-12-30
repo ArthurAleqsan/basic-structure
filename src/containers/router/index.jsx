@@ -1,51 +1,103 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import React, { useRef, useEffect, useState } from 'react';
+import { withRouter } from "react-router-dom";
+import { Carousel } from 'antd';
+import 'antd/lib/carousel/style/index.css';
 
-import ParalaxMain from './../parallax/homePage';
-import ParalaxIndustries from './../parallax/industriesPage';
+import ParalaxMain from './../../components/ParalaxMain';
 import Header from './../../components/componentsLib/Header';
-import { HomePage } from './../pages/HomePage';
-import { Industries } from './../pages/Industries';
+import { SocialBtn } from '../../components/componentsLib/socialBtn';
+import Home from '../pageContents/home/Home';
+import HomeSecond from '../pageContents/home/Home.second';
+import Footer from '../../components/componentsLib/Footer';
+import IndustriesSecond from '../pageContents/industries/Industries.second';
+import Services from '../pageContents/services/Services';
+import { setPageRecursive } from '../../util/helpers';
+import CareersSecondView from '../pageContents/careers/Careers.secondView';
+import FirstViewWrapper from '../pageContents/FirstViewWrapper';
 
 
-class MainRouter extends Component {
-    constructor(props) {
-        super(props);
-    }
+const MainRouter = () => {
+    const carouselRef = useRef(null);
+    const [showThirdSaction, setShowThirdSaction] = useState(false);
+    const [pageIndex, setPageIndex] = useState();
+    const socials = ['facebook', 'twitter', 'linkedin'];
+    const links = ['https://www.facebook.com/it.mayro/', 'https://twitter.com/MAYRO_COMICS', 'https://www.linkedin.com/company/teamath/about/'];
+    useEffect(() => {
+        switch (location.pathname) {
+            case '/':
+                if (pageIndex === 0) return
+                carouselRef.current.goTo(0);
+                setPageRecursive(0, pageIndex, carouselRef.current);
+                setPageIndex(0);
+                setTimeout(() => setShowThirdSaction(true), 100);
 
-    render() {
-        return (
-            <div className='main-container'>
-                <Router>
-                    <Route
-                        component={({ location }) => {
-                            return (<div>
-                                <Header />
-                                <div className='main-content'>
-                                    <TransitionGroup component={null} >
-                                        <CSSTransition
-                                            timeout={300}
-                                            classNames="page"
-                                            key={location.key}
-                                        >
-                                            <Switch>
-                                                <Route path="/industries" component={() => (<Industries><ParalaxIndustries /></Industries>)} />
-                                                <Route path="/services" component={() => (<div> services</div>)} />
-                                                <Route path="/careers" component={() => (<div> careers</div>)} />
-                                                <Route path="/" component={() => (<HomePage><ParalaxMain /></HomePage>)} />
-                                            </Switch>
-                                        </CSSTransition>
-                                    </TransitionGroup>
-                                </div>
-                            </div>
-                            )
-                        }
-                        } />
-                </Router>
+                break;
+            case '/industries':
+                if (pageIndex === 1) return
+                carouselRef.current.goTo(1);
+                setPageRecursive(1, pageIndex, carouselRef.current);
+                setPageIndex(1);
+                setTimeout(() => setShowThirdSaction(false), 100);
+
+                break;
+            case '/services':
+                if (pageIndex === 2) return
+                carouselRef.current.goTo(2);
+                setPageRecursive(2, pageIndex, carouselRef.current);
+                setPageIndex(2);
+                setTimeout(() => setShowThirdSaction(false), 100);
+
+                break;
+            case '/careers':
+                if (pageIndex === 3) return
+                carouselRef.current.goTo(3);
+                setPageRecursive(3, pageIndex, carouselRef.current);
+                setPageIndex(3);
+                setTimeout(() => setShowThirdSaction(false), 100);
+                break;
+        }
+    });
+
+    return (
+        <div className='main-container'>
+            <div>
+                <Header />
+                <div className='main-content'>
+                    <Carousel dots={false} ref={carouselRef} className={showThirdSaction ? 'show-third-section' : 'without-third-section'}>
+                        <ParalaxMain >
+                            <Home />
+                            <HomeSecond />
+                        </ParalaxMain>
+                        <ParalaxMain className='two-page-content'>
+                            <FirstViewWrapper
+                                coverText='Industries'
+                                fromPage='industries'
+                                firstHeaderText='Give Us the Problem,'
+                                secondHeaderText='Take the Solution!'
+                                desc='We deliver end to end business and technology transformation, taking advantage of agile methodologies, proven customer collaboration structures, engineering superiority tools and robust teams.'
+                            />
+                            <IndustriesSecond />
+                        </ParalaxMain>
+                        <Services />
+                        <ParalaxMain >
+                            <FirstViewWrapper
+                                coverText='Careers'
+                                firstHeaderText='Join Us'
+                                desc='We’re youthful, inventive, emotional, witty, wacky, and in particular FUNNY (all right perhaps not that
+                                      funny). You will see, being MAYRO is cool.
+                                      Don’t lose your chance, apply now.'
+                    />
+                            <CareersSecondView />
+                        </ParalaxMain>
+                    </Carousel>
+                    <div className='social-btn-container'>
+                        {socials.map((social, index) => <SocialBtn key={index} type={social} link={links[index]} />)}
+                    </div>
+                </div>
+                <Footer />
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default withRouter(MainRouter);

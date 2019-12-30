@@ -1,0 +1,48 @@
+.industrues-second-view {
+    font-size: 20px;
+    color: $hero-font-color;
+    background: #eaeaea;
+    display: flex;
+    height: 100vh;
+    .left-row {
+        width: 60%;
+        .left-row-text-container {
+            display: flex;
+            flex-direction: column;
+            .left-row-text-container-header {
+                font-family: GothamUltra;
+                font-size: 60px;
+                line-height: 1.17;
+                letter-spacing: 4.8px;
+                text-align: left;
+                color: #394f8f;
+                margin-bottom: 85px;
+            }
+            .media-section-desc-contrainer {
+                display: flex;
+                .left-row-text-container-image-box {
+                    width: 145px;
+                    height: 145px;
+                    border-radius: 50%;
+                    margin-right: 20px;
+                    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+                    background-color: #f67b32;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .left-row-text-container-text {
+                    font-family: GothamRoundedBook;
+                    font-size: 22px;
+                    line-height: 1.45;
+                    text-align: left;
+                    color: #394f8f;
+                    width: 75%;
+                }
+            }
+        }
+    }
+    .row-container {
+        padding: 135px;
+    }
+}

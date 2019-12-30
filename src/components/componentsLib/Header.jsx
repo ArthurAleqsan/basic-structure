@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import NavigationComponent from './simpleUIComponents/NavigationComponent';
+import NavigationComponent from './NavigationComponent';
 import { withRouter } from 'react-router';
 
 
@@ -22,7 +22,7 @@ const Header = () => {
                 selectedItem={selectedItem}
                 handleSelect={(pageName) => handleSelect(pageName)}
             />
-            <div><span className='contact-item'>{t('CONTACT')}</span></div>
+            <div><span className='contact-item'>{t('Contact')}</span></div>
         </header>
     )
 }

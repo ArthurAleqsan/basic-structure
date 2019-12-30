@@ -1,0 +1,43 @@
+.collapse-container {
+  padding: 100px;
+  .collapse-item {
+    border-top: 1px solid #707070;
+    height: 150px;
+    display: block;
+    padding: 25px 0;
+    cursor: pointer;
+    .colapse-header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 30px;
+      p {
+        font-family: gothamMediumBook;
+        font-size: 28px;
+        line-height: 1.43;
+        text-align: left;
+        color: #394f8f;
+        cursor: pointer;
+      }
+    }
+  }
+  .active {
+      background: #fff;
+      padding: unset;
+      .colapse-header-container {
+        background-color: #232c60;
+        padding: 30px 60px;
+        transition: background-color 0.3s ease-out;
+      }
+  }
+  .panel-desc {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    transition: visibility 0.3s ease-out;
+    color: #394f8f;
+    background: #fff; 
+  }
+}
