@@ -7,14 +7,15 @@ const Collapse = ({ children, headers }) => {
     const [activeTab, setActiveTab] = useState(null);
 
     const togglePanel = (e, index) => {
-        if(e.target.id.indexOf('panel') > -1) return
+        if (e.target.id.indexOf('panel') > -1) return
         setActiveTab(index);
         const elem = document.getElementById(index);
         const content = elem.childNodes[0];
+        console.log(elem.childNodes);
         if (height) {
             setHeight(null)
         } else {
-            setHeight((2 * +content.scrollHeight) + "px");
+            setHeight((+content.scrollHeight) + "px");
         }
     };
     const getNumberFromHeight = (str) => {
@@ -30,9 +31,15 @@ const Collapse = ({ children, headers }) => {
             >
                 <div className='colapse-header-container'>
                     <p>{header}</p>
-                    <img src='/assets/images/diagonal-arrow.svg' className='img-icon' />
+                    <img src={activeTab === index && height ? '/assets/images/diagonal-arrow-white.svg' : '/assets/images/diagonal-arrow.svg'} className='img-icon' />
                 </div>
-                <div className='panel-desc' id={`${index}`} style={{ maxHeight: activeTab === index ? height : 0, visibility: height ? 'visible' : 'hidden' }}>{children[index]}</div>
+                <div
+                    className='panel-desc'
+                    id={`${index}`}
+                    style={{ maxHeight: activeTab === index ? height : 0, visibility: height ? 'visible' : 'hidden' }}
+                >
+                    {children[index]}
+                </div>
             </div>)}
         </div>
     )
