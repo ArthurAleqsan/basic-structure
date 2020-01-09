@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { withRouter } from "react-router-dom";
 import { Carousel } from 'antd';
-import 'antd/lib/carousel/style/index.css';
+
 
 import ParalaxMain from './../../components/ParalaxMain';
 import Header from './../../components/componentsLib/Header';
@@ -23,6 +23,7 @@ const MainRouter = () => {
     const socials = ['facebook', 'twitter', 'linkedin'];
     const links = ['https://www.facebook.com/it.mayro/', 'https://twitter.com/MAYRO_COMICS', 'https://www.linkedin.com/company/teamath/about/'];
     useEffect(() => {
+        const careersSection = document.querySelectorAll('[data-index]')[4];
         switch (location.pathname) {
             case '/':
                 if (pageIndex === 0) return
@@ -30,7 +31,7 @@ const MainRouter = () => {
                 setPageRecursive(0, pageIndex, carouselRef.current);
                 setPageIndex(0);
                 setTimeout(() => setShowThirdSaction(true), 100);
-
+                careersSection.style.height = '100%';
                 break;
             case '/industries':
                 if (pageIndex === 1) return
@@ -38,6 +39,7 @@ const MainRouter = () => {
                 setPageRecursive(1, pageIndex, carouselRef.current);
                 setPageIndex(1);
                 setTimeout(() => setShowThirdSaction(false), 100);
+                careersSection.style.height = '100%';
 
                 break;
             case '/services':
@@ -46,6 +48,7 @@ const MainRouter = () => {
                 setPageRecursive(2, pageIndex, carouselRef.current);
                 setPageIndex(2);
                 setTimeout(() => setShowThirdSaction(false), 100);
+                careersSection.style.height = '100%';
 
                 break;
             case '/careers':
@@ -54,6 +57,7 @@ const MainRouter = () => {
                 setPageRecursive(3, pageIndex, carouselRef.current);
                 setPageIndex(3);
                 setTimeout(() => setShowThirdSaction(false), 100);
+                careersSection.style.height = 'auto';
                 break;
         }
     });
@@ -68,7 +72,7 @@ const MainRouter = () => {
                             <Home />
                             <HomeSecond />
                         </ParalaxMain>
-                        <ParalaxMain className='two-page-content'>
+                        <ParalaxMain>
                             <FirstViewWrapper
                                 coverText='Industries'
                                 fromPage='industries'
@@ -79,7 +83,7 @@ const MainRouter = () => {
                             <IndustriesSecond />
                         </ParalaxMain>
                         <Services />
-                        <ParalaxMain >
+                        <ParalaxMain className = 'careers-section'>
                             <FirstViewWrapper
                                 coverText='Careers'
                                 firstHeaderText='Join Us'

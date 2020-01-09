@@ -3,7 +3,7 @@
 }
   
 @font-face {
-    font-family: gothamBblack;
+    font-family: gothamBlack;
     src: url(../fonts/GOTHAMBLACK.ttf);
   }
   @font-face {
@@ -110,7 +110,6 @@ img {
 @import './header';
 @import './footer';
 @import './eyeSlyder';
-@import './collapse';
 @import './social-btns';
 @import './home/home';
 @import './home/home.second';
