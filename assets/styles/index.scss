@@ -1,40 +1,6 @@
 * {
     box-sizing: border-box;
 }
-  
-@font-face {
-    font-family: gothamBlack;
-    src: url(../fonts/GOTHAMBLACK.ttf);
-  }
-  @font-face {
-    font-family: HelveticaNeue;
-    src: url(../fonts/HelveticaNeue.ttf);
-  }
-  @font-face {
-    font-family: gothamRounded;
-    src: url(../fonts/GothamRnd-Light.otf);
-  }
-  
-  @font-face {
-    font-family: gothamRoundedBook;
-    src: url(../fonts/GothamRnd-Book.otf);
-  }
-  @font-face {
-    font-family: gothamRoundedMedium;
-    src: url(../fonts/GothamRnd-Medium.otf);
-  }
-  @font-face {
-    font-family: gothamMediumBook;
-    src: url(../fonts/Gotham-Medium.otf);
-  }
-  @font-face {
-    font-family: gothamUltra;
-    src: url(../fonts/Gotham-Ultra.ttf);
-  }
-  @font-face {
-    font-family: bauhs93;
-    src: url(../fonts/BAUHS93.ttf);
-  }
 
 html, body {
     border: 0;
@@ -105,16 +71,3 @@ img {
     height: 100%;
     object-fit: cover;
 }
-
-@import './general';
-@import './header';
-@import './footer';
-@import './eyeSlyder';
-@import './social-btns';
-@import './home/home';
-@import './home/home.second';
-@import './home/location';
-@import './firstViewWrapper';
-@import './industries/industries';
-@import './careers/careers';
-
