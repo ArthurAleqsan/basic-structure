@@ -5,7 +5,7 @@ const MainRouter = () => {
 
     return (
         <div className='main-container'>
-            sdvsdvsdv
+            basic
         </div>
     );
 };
