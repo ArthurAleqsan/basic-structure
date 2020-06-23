@@ -14,7 +14,7 @@ export const history = createBrowserHistory({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let array_middleware = [thunk];
-function getCompose() {
+const getCompose = () => {
     if (process.env.NODE_ENV !== 'production') {
         return composeEnhancers(applyMiddleware(...array_middleware));
     } else {
