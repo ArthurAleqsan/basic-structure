@@ -77,9 +77,6 @@ const config = {
             },
             canPrint: true
         }),
-        // new PurifyCSSPlugin({
-        //     paths: glob.sync(path.join(__dirname, 'src/**/*.jsx')),
-        // }),
         new CopyWebpackPlugin([
             {
                 from: 'assets/**/*',
