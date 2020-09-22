@@ -35,11 +35,15 @@ module.exports = {
                 {
                     loader: 'postcss-loader',
                     options: {
-                    plugins: [
-                        autoprefixer({
-                            overrideBrowserslist: ['ie >= 8', 'last 20 version']
-                        })
-                    ]
+                        postcssOptions: {
+                            plugins: [
+                                autoprefixer({ overrideBrowserslist: ['ie >= 8', 'last 20 version'] }),
+                                // {
+                                //     browsers: ['last 10 versions']
+                                //     //  overrideBrowserslist: ['ie >= 8', 'last 20 version']
+                                // }
+                            ]
+                        }
                     }
                 },
                 {
