@@ -5,7 +5,6 @@ import { Router } from 'react-router-dom';
 import store, { history } from './store/configureReduxStore';
 import Routes from './containers/router';
 import './../assets/styles/index.scss';
-import './i18n';
 
 render((
     <Provider store={store} >
